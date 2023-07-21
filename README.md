@@ -1,5 +1,8 @@
 # batting-cage-business-website
 
+This repository contains a website for a Batting Cage Business. 
+It aims to have real-time booking, user accounts, and a modern interface to enhance online presence and streamline customer bookings.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

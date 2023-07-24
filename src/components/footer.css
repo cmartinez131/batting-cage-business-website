@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+}
+
+.footer-sections {
+    width: 100%;
+    padding: 2rem 0;
+    background-color: #f8f8f8;
+    color: white;
+    font-size: 14px;
+    background-color: black;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.footer-column {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.first-column {
+    flex: 1 0 30%;
+    /* You can adjust these percentages to the widths you want */
+    background-color: hotpink;
+    padding-left: 6rem;
+    padding-right: 2rem;
+    font-size: 14px;
+}
+
+.second-column {
+    flex: 1 0 20%;
+    background-color: teal;
+    padding-left: 3rem;
+    font-size: 16px;
+}
+
+.third-column {
+    flex: 1 0 20%;
+    background-color: green;
+    padding-left: 1rem;
+    font-size: 16px;
+}
+
+.fourth-column {
+    flex: 1 0 30%;
+    text-align: center;
+    background-color: aquamarine;
+    padding-left: 2rem;
+    padding-right: 6rem;
+    padding-top: 2rem;
+}
+
+.page-link {
+    color: #00D1FF;
+    font-weight: bold;
+}
+
+.second-column li {
+    margin-bottom: 5px;
+}
+
+.second-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.third-column h3 {
+    color: white;
+}
+
+.third-column p,
+.third-column li {
+    color: #00D1FF;
+}
+
+.third-column ul {
+    padding-left: 10px;
+}
+
+.third-column li {
+    margin-bottom: 5px;
+    /* Change this value as needed */
+}
+
+.footer-bottom {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: lighter;
+}
+
+hr {
+    width: 90%;
+    border: 0;
+    height: 1px;
+    background: white;
+    margin-bottom: 1rem;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.app-store-button {
+    width: 100px;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-media-button {
+    width: 30px;
+    height: auto;
+    margin: .4rem;
+}

@@ -25,8 +25,6 @@
 
 .first-column {
     flex: 1 0 30%;
-    /* You can adjust these percentages to the widths you want */
-    background-color: hotpink;
     padding-left: 6rem;
     padding-right: 2rem;
     font-size: 14px;
@@ -34,14 +32,12 @@
 
 .second-column {
     flex: 1 0 20%;
-    background-color: teal;
     padding-left: 3rem;
     font-size: 16px;
 }
 
 .third-column {
     flex: 1 0 20%;
-    background-color: green;
     padding-left: 1rem;
     font-size: 16px;
 }
@@ -49,7 +45,6 @@
 .fourth-column {
     flex: 1 0 30%;
     text-align: center;
-    background-color: aquamarine;
     padding-left: 2rem;
     padding-right: 6rem;
     padding-top: 2rem;
@@ -84,7 +79,6 @@
 
 .third-column li {
     margin-bottom: 5px;
-    /* Change this value as needed */
 }
 
 .footer-bottom {

@@ -7,6 +7,7 @@ import Memberships from '../pages/Memberships';
 import ProShop from '../pages/ProShop';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
+import Features from '../pages/Features';
 import '../styles.css'
 
 const Body = () => {
@@ -21,6 +22,7 @@ const Body = () => {
             <Route path="/memberships" element={<Memberships />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/features" element={<Features />} />
         </Routes>
     );
 }

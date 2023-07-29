@@ -53,6 +53,7 @@
 .page-link {
     color: #00D1FF;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .second-column li {
@@ -114,4 +115,9 @@ hr {
     width: 30px;
     height: auto;
     margin: .4rem;
+}
+
+#footer-sections {
+    flex-shrink: 0;
+    background-color: antiquewhite;
 }

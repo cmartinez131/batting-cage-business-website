@@ -1,8 +1,24 @@
 const Login = () => {
     return (
-        <div>
+        <div className="container center-content">
             <h1>Log In</h1>
-            {/* Add your form fields here */}
+            <form className="row row-col">
+                <div className="col">
+                    <label>
+                        Username:
+                        <input type="text" name="username" required />
+                    </label>
+                </div>
+                <div className="col">
+                    <label>
+                        Password:
+                        <input type="password" name="password" required />
+                    </label>
+                </div>
+                <div className="col">
+                    <button type="submit">Log In</button>
+                </div>
+            </form>
         </div>
     );
 };

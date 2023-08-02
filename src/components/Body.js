@@ -8,6 +8,7 @@ import ProShop from '../pages/ProShop';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Features from '../pages/Features';
+import Locations from '../pages/Locations';
 import '../styles.css'
 
 const Body = () => {
@@ -23,6 +24,7 @@ const Body = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/features" element={<Features />} />
+            <Route path="/locations" element={<Locations />} />
         </Routes>
     );
 }

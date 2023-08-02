@@ -11,5 +11,68 @@ html, body {
     flex-direction: column;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
 
+.img-small {
+    width: 50%;
+    height: auto;
+}
 
+.img-med {
+    width: 75%;
+    height: auto;
+}
+
+/* styling for responsive page layout */
+
+.container {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: pink;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.col {
+    flex: 1;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 2px solid red; /* Red border for 'col' */
+}
+
+.col-wider {
+    flex: 2;
+    border: 2px solid blue; /* Blue border for 'col-wider' */
+}
+
+.col-even-wider {
+    flex: 3;
+    border: 2px solid green; /* Green border for 'col-even-wider' */
+}
+
+.center {
+    align-items: center;
+    text-align: center;
+}
+
+.row-col {
+    flex-direction: column;
+}
+
+/* center content in a image containers - used in cover images */
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

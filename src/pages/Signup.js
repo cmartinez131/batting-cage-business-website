@@ -1,8 +1,30 @@
 const Signup = () => {
     return (
-        <div>
+        <div className="container center-content">
             <h1>Sign Up</h1>
-            {/* Add your form fields here */}
+            <form className="row row-col">
+                <div className="col">
+                    <label>
+                        Username:
+                        <input type="text" name="username" required />
+                    </label>
+                </div>
+                <div className="col">
+                    <label>
+                        Password:
+                        <input type="password" name="password" required />
+                    </label>
+                </div>
+                <div className="col">
+                    <label>
+                        Confirm Password:
+                        <input type="password" name="confirmPassword" required />
+                    </label>
+                </div>
+                <div className="col">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
         </div>
     );
 };

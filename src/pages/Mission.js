@@ -1,15 +1,21 @@
-import './mission.css';
-// import coverImg from '../assets/home-cover.png';
+import './pageStyles.css';
+import coverImage from '../assets/home-cover.png';
 
 const Mission = () => {
     return (
-        <div className="mission">
-            <div className='mission-container-1'>
-                <h1 className="cover-title">Batting Blvd</h1>
+        <div className="container mission">
+            <div className='row center-content'>
+                <img src={coverImage} alt="Cover" className='img-med' />
             </div>
-            <div>
-                <h1>This is our mission</h1>
-                <p>Have fun!</p>
+            <div className="row">
+                <div className="col center">
+                    <h1>Mission</h1>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col center">
+                    <p>Have fun!</p>
+                </div>
             </div>
         </div>
     )

@@ -1,5 +1,4 @@
-import './about.css';
-
+import './pageStyles.css'
 const About = () => {
     return (
         <div className="container">

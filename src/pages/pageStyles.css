@@ -7,3 +7,79 @@
     background-color: aqua;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+
+.blog-title {
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+.blogpost {
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blogpost-title {
+    color: darkblue;
+    padding: 10px 0;
+}
+
+.blogpost-content {
+    color: slategray;
+    line-height: 1.6;
+}
+
+.blogpost-date {
+    color: #888888;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+.blogpost-tag {
+    display: inline-block;
+    background-color: #1e90ff;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px 5px 5px 0;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.blogpost-tags {
+    margin-top: 10px;
+}
+
+.tags-label {
+    color: black;
+    margin-bottom: 5px;
+}
+
+.blog-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.blog-filters button {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blog-filters button:hover {
+    background-color: #187bcd;
+}
+
+.blog-filters button:active {
+    background-color: #105e91;
+}

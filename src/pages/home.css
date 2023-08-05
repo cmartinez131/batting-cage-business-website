@@ -58,6 +58,18 @@
     background-color: whitesmoke;
 }
 
+.learn-more-button {
+    background-color: lightgrey;
+    font-size: x-large;
+    border-radius: 12px;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.learn-more-button:hover {
+    background-color: whitesmoke;
+}
+
 .home-container-3 {
     display: flex;
     justify-content: center;

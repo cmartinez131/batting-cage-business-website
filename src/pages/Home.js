@@ -23,6 +23,7 @@ const Home = () => {
                 <div className='container-3-text'>
                     <p>Whether you're a rookie or a seasoned pro, an unforgettable experience awaits you at Batting Blvd. Book cages, take lessons, host a team event, join a league, and more.</p>
                     <p>Reserve a batting cage for as low as $30/hr. Swing by Batting Blvd and let's hit it out of the park!</p>
+                    <button className="learn-more-button">LEARN MORE</button>
                 </div>
             </div>
             <div className="home-image-container">

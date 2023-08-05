@@ -9,6 +9,7 @@ import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Features from '../pages/Features';
 import Locations from '../pages/Locations';
+import Blog from '../pages/Blog';
 import '../styles.css'
 
 const Body = () => {
@@ -25,6 +26,7 @@ const Body = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/features" element={<Features />} />
             <Route path="/locations" element={<Locations />} />
+            <Route path="/blog" element={<Blog />} />
         </Routes>
     );
 }

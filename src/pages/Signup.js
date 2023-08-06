@@ -1,4 +1,4 @@
-import { GoogleLogin } from 'react-google-login';
+// import { GoogleLogin } from 'react-google-login';
 
 const Signup = () => {
 
@@ -21,7 +21,7 @@ const Signup = () => {
                 <div className="col">
                     <label>
                         Email:
-                        <input type="text" name="email" required />
+                        <input type="text" name="email" />
                     </label>
                 </div>
                 <div className="col">
@@ -33,26 +33,26 @@ const Signup = () => {
                 <div className="col">
                     <label>
                         Last Name:
-                        <input type="text" name="lastname" required />
+                        <input type="text" name="lastname" />
                     </label>
                 </div>
                 <div className="col">
                     <label>
                         Password:
-                        <input type="password" name="password" required />
+                        <input type="password" name="password" />
                     </label>
                 </div>
                 <div className="col">
                     <button type="submit">Sign Up</button>
                 </div>
             </form>
-            <GoogleLogin
+            {/* <GoogleLogin
                 clientId="YOUR_CLIENT_ID"
                 buttonText="Signup with Google"
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
                 cookiePolicy={'single_host_origin'}
-            />
+            /> */}
         </div>
     );
 };

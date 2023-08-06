@@ -21,13 +21,13 @@ const Footer = () => {
                 <div className="second-column">
                     <h2>Resources</h2>
                     <ul>
-                        <li><Link className='page-link footer-a' to="/about">Resources</Link></li>
+                        <li><Link className='page-link' to="/about">Resources</Link></li>
                         <li><Link className='page-link' to="/about">Terms of Use</Link></li>
                         <li><Link className='page-link' to="/about">Club Policies</Link></li>
                         <li><Link className='page-link' to="/about">Liability Waive</Link></li>
                         <li><Link className='page-link' to="/about">Privacy Policy</Link></li>
                         <li><Link className='page-link' to="/about">Safety Policies</Link></li>
-                        <li><Link className='page-link' to="/about">Join Mailing List</Link></li>
+                        <li><Link className='page-link' to="/get-updates">Join Mailing List</Link></li>
                     </ul>
                 </div>
                 <div className="third-column">

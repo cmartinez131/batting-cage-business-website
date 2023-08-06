@@ -10,6 +10,7 @@ import Signup from '../pages/Signup';
 import Features from '../pages/Features';
 import Locations from '../pages/Locations';
 import Blog from '../pages/Blog';
+import GetUpdates from '../pages/GetUpdates';
 import '../styles.css'
 
 const Body = () => {
@@ -27,6 +28,7 @@ const Body = () => {
             <Route path="/features" element={<Features />} />
             <Route path="/locations" element={<Locations />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/get-updates" element={<GetUpdates />} />
         </Routes>
     );
 }

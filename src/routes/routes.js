@@ -18,6 +18,7 @@ const AppRoutes = () => (
         <Route path="/login" element={<Login />} />
         <Route path="/locations" element={<Login />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/get-updates" element={<GetUpdates />} />
     </Routes>
 );
 

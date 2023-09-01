@@ -10,18 +10,24 @@ const Signup = () => {
     return (
         <div className="container center-content">
             <h1>Sign Up</h1>
-            <form className="row row-col">
+            <form className="row row-col form-background">
                 {/* production build will not have username field */}
-                <div className="col">
+                {/* <div className="col">
                     <label>
                         Username:
                         <input type="text" name="username" required />
                     </label>
-                </div>
+                </div> */}
                 <div className="col">
                     <label>
                         Email:
                         <input type="text" name="email" />
+                    </label>
+                </div>
+                <div className="col">
+                    <label>
+                        Password:
+                        <input type="password" name="password" />
                     </label>
                 </div>
                 <div className="col">
@@ -38,12 +44,16 @@ const Signup = () => {
                 </div>
                 <div className="col">
                     <label>
-                        Password:
-                        <input type="password" name="password" />
+                    <input type="checkbox" name="rememberMe" />
+                        Remember Me
+                        <button className="need-help-btn">Need Help?</button>
                     </label>
                 </div>
                 <div className="col">
                     <button type="submit">Sign Up</button>
+                </div>
+                <div className="member-check">
+                    Already a member? <a href="/login">Sign in now</a>
                 </div>
             </form>
             {/* <GoogleLogin

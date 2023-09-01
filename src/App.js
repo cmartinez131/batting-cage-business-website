@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import NewNavbar from './components/NewNavbar'
 import Body from './components/Body'
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
     <>
       <Router>
         <Navbar />
+        {/* <NewNavbar /> */}
         <Body />
         <Footer />
       </Router>
@@ -22,4 +24,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

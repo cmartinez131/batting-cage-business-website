@@ -1,10 +1,8 @@
 .features {
-    background-color: aqua;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .mission {
-    background-color: aqua;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -82,4 +80,34 @@
 
 .blog-filters button:active {
     background-color: #105e91;
+}
+
+/* mision page styles */
+
+.mission-text {
+    background-image: url('https://www.heatpressnation.com/cdn/shop/products/unisub-sublimation-blank-homeplate-plaque-10-x-10-4-pack.jpg?v=1600985064');
+    background-size: cover;
+    background-position: center;
+    padding: 20px; /* Add padding to create some space around the text */
+    color: black; /* Set the text color if needed */
+}
+
+.home-plate-img {
+    width: 100%;
+    height: auto;
+    /* This ensures that the aspect ratio of the image is maintained as it scales up to fill the container */
+}
+
+.cover-container {
+    position: relative;
+}
+
+.cover-text {
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 86px; /* adjust the size as needed */
+    font-weight: bold; /* optional, for bold text */
 }

@@ -21,13 +21,12 @@ const Footer = () => {
                 <div className="second-column">
                     <h2>Resources</h2>
                     <ul>
-                        <li><Link className='page-link' to="/about">Resources</Link></li>
+                    <li><Link className='page-link' to="/get-updates">Join Mailing List</Link></li>
                         <li><Link className='page-link' to="/about">Terms of Use</Link></li>
                         <li><Link className='page-link' to="/about">Club Policies</Link></li>
                         <li><Link className='page-link' to="/about">Liability Waive</Link></li>
                         <li><Link className='page-link' to="/about">Privacy Policy</Link></li>
                         <li><Link className='page-link' to="/about">Safety Policies</Link></li>
-                        <li><Link className='page-link' to="/get-updates">Join Mailing List</Link></li>
                     </ul>
                 </div>
                 <div className="third-column">
@@ -40,6 +39,7 @@ const Footer = () => {
                     <ul>
                         <li>1774 Grove Street, Long Island City, New York 11101</li>
                         <li>2715 Church Street, Brooklyn, New York 11217</li>
+                        <li>1084 Rainy Day Drive, Boston, MA 02199</li>
                     </ul>
                 </div>
                 <div className="fourth-column">

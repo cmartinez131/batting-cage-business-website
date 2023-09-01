@@ -35,13 +35,12 @@ img {
     display: flex;
     flex-direction: column; 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: pink;
 }
 
 .row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    border: 2px solid yellow;
 }
 
 .col {
@@ -75,4 +74,34 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.new-nav {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form-background {
+    background-color: #003366;  /* Dark background */
+    padding: 20px;
+    border-radius: 8px;  /* Rounded corners */
+    color: white;  /* White text */
+}
+
+.form-background label, .form-background input {
+    color: white;
+}
+
+.form-background input {
+    background-color: #004680;
+    color: white;
+    border: 1px solid #0070a3;
+    border-radius: 4px;
+    padding: 5px;
 }

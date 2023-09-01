@@ -1,52 +1,46 @@
-// import { GoogleLogin } from 'react-google-login';
+import React, { useState } from 'react';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../firebase';
 
 const Signup = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const responseGoogle = (response) => {
-        console.log(response);
-        // you will get user info from response object, and you can use this info to create a user in your own system.
-    }
+    const navigate = useNavigate();  // React Router v6 useNavigate hook
+
+    const handleSignup = async (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        const auth = getAuth();
+
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            console.log("User signed up:", user);
+            alert("Successfully signed up!");
+            navigate('/');  // Redirect to home page after successful signup
+        } catch (error) {
+            console.error("Error signing up:", error);
+        }
+    };
 
     return (
         <div className="container center-content">
             <h1>Sign Up</h1>
-            <form className="row row-col form-background">
-                {/* production build will not have username field */}
-                {/* <div className="col">
-                    <label>
-                        Username:
-                        <input type="text" name="username" required />
-                    </label>
-                </div> */}
+            <form className="row row-col form-background" onSubmit={handleSignup}>
                 <div className="col">
                     <label>
                         Email:
-                        <input type="text" name="email" />
+                        <input type="email" name="email" required />
                     </label>
                 </div>
                 <div className="col">
                     <label>
                         Password:
-                        <input type="password" name="password" />
-                    </label>
-                </div>
-                <div className="col">
-                    <label>
-                        First Name:
-                        <input type="text" name="firstname" required />
-                    </label>
-                </div>
-                <div className="col">
-                    <label>
-                        Last Name:
-                        <input type="text" name="lastname" />
-                    </label>
-                </div>
-                <div className="col">
-                    <label>
-                    <input type="checkbox" name="rememberMe" />
-                        Remember Me
-                        <button className="need-help-btn">Need Help?</button>
+                        <input type="password" name="password" required />
                     </label>
                 </div>
                 <div className="col">
@@ -56,13 +50,6 @@ const Signup = () => {
                     Already a member? <a href="/login">Sign in now</a>
                 </div>
             </form>
-            {/* <GoogleLogin
-                clientId="YOUR_CLIENT_ID"
-                buttonText="Signup with Google"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy={'single_host_origin'}
-            /> */}
         </div>
     );
 };

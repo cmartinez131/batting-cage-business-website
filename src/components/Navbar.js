@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
+import { auth } from '../firebase';
 import '../styles.css'
 import './navbar.css'
 import logo from '../assets/logo.png'
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
 
     return (
         <nav className="nav">
@@ -48,8 +49,18 @@ const Navbar = () => {
                 </div>
             </div>
             <div className='loginButtons'>
-                <Link className="button" to="/signup">Sign Up</Link>
-                <Link className="button" to="/login">Log In</Link>
+                {user ? (
+                    <>
+                        <span>{user.email}</span>
+                        {/* <Link className="button" to="/profile">Profile</Link> link to profile page */}
+                        <button className="button" onClick={() => auth.signOut()}>Logout</button>
+                    </>
+                ) : (
+                    <>
+                        <Link className="button" to="/signup">Sign Up</Link>
+                        <Link className="button" to="/login">Log In</Link>
+                    </>
+                )}
             </div>
         </nav>
     )

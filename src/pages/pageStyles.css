@@ -111,3 +111,15 @@
     font-size: 86px; /* adjust the size as needed */
     font-weight: bold; /* optional, for bold text */
 }
+
+.error-message {
+    color: black;
+    background-color: #FFC0CB;
+    padding: 10px;
+    margin: 10px;
+    text-align: center; /* Center the text horizontally */
+    width: fit-content; /* Make the width fit the content */
+    margin-left: auto; /* Center the block horizontally */
+    margin-right: auto; /* Center the block horizontally */
+    border-radius: 5px; /* Optional: for rounded corners */
+}

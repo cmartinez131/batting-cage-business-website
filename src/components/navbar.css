@@ -6,6 +6,7 @@
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    flex-wrap: wrap;
 }
 
 .title {
@@ -112,4 +113,35 @@
 
 .button:hover {
     background-color: #EEEDED;
+}
+
+/* Media Query for small screens */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column; /* Stack items vertically */
+    }
+    
+    .dropdown, .loginButtons {
+        width: 100%; /* Take full width */
+        text-align: center; /* Center the text */
+    }
+    
+    .dropbtn, .button {
+        font-size: 16px; /* Reduce font size */
+        padding: 8px; /* Reduce padding */
+    }
+    
+    .navLink {
+        padding: 10px; /* Reduce padding */
+    }
+    .dropdown-content {
+        position: static; /* Override position */
+        visibility: visible; /* Override visibility */
+        opacity: 1; /* Override opacity */
+        display: none; /* Initially hide */
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block; /* Display when active */
+    }
 }

@@ -28,9 +28,9 @@ const App = () => {
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar user={user}/>
         {/* <NewNavbar /> */}
-        <Body />
+        <Body user={user}/>
         <Footer />
       </Router>
     </>

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import '../styles.css'; // Adjust the path as per your project structure
 
 const Login = () => {
+    const [errorMessage, setErrorMessage] = useState(''); // State to hold the error message
     const navigate = useNavigate();
 
     const logIn = async (e) => {
@@ -10,14 +12,13 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        const auth = getAuth(); // consistent with Signup.js
+        const auth = getAuth();
 
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            alert("Successfully logged in!");
             navigate('/');
         } catch (error) {
-            alert(error.message);
+            setErrorMessage('Invalid email or password'); // Set the error message on failure
         }
     };
 
@@ -40,6 +41,7 @@ const Login = () => {
                 <div className="col">
                     <button type="submit">Log In</button>
                 </div>
+                {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Conditionally render error message */}
             </form>
         </div>
     );

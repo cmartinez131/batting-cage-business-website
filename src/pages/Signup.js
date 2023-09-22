@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../firebase';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";    //firebase authentication methods
-import { addDoc, collection } from "firebase/firestore"     //firestore methods
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { addDoc, collection } from "firebase/firestore"
 
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
-    const navigate = useNavigate();  // React Router v6 useNavigate hook
+    const navigate = useNavigate();
 
     const handleSignup = async (e) => {
         e.preventDefault();
@@ -19,22 +20,23 @@ const Signup = () => {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
-
-            // add a new document to the "users" collection with the user's info
             await addDoc(collection(db, "users"), {
                 uid: user.uid,
                 email,
-                firstName: "", // Initialize with empty string
+                firstName: "",
                 lastName: "",
-                phoneNumber: "" 
-                // add other fields as needed
+                phoneNumber: ""
             });
 
             console.log("User signed up:", user);
-            alert("Successfully signed up!");
-            navigate('/');  // Redirect to home page after successful signup
+            navigate('/');
         } catch (error) {
             console.error("Error signing up:", error);
+            if (error.code === 'auth/email-already-in-use') {
+                setErrorMessage('Email is already in use'); // Set error message
+            } else {
+                setErrorMessage(error.message); // For other errors, set the error message returned by Firebase
+            }
         }
     };
 
@@ -57,6 +59,7 @@ const Signup = () => {
                 <div className="col">
                     <button type="submit">Sign Up</button>
                 </div>
+                {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Conditionally render error message */}
                 <div className="member-check">
                     Already a member? <a href="/login">Sign in now</a>
                 </div>

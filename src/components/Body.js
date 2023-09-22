@@ -11,9 +11,10 @@ import Features from '../pages/Features';
 import Locations from '../pages/Locations';
 import Blog from '../pages/Blog';
 import GetUpdates from '../pages/GetUpdates';
+import UserProfile from '../pages/UserProfile';
 import '../styles.css'
 
-const Body = () => {
+const Body = ({ user }) => {
 
     return (
         <Routes>
@@ -29,6 +30,7 @@ const Body = () => {
             <Route path="/locations" element={<Locations />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/get-updates" element={<GetUpdates />} />
+            <Route path="/profile" element={<UserProfile user={user} />} />
         </Routes>
     );
 }

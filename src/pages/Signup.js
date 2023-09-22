@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { addDoc, collection } from "firebase/firestore"
+import '../styles.css'; // Adjust the path as per your project structure
 
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [hasAgreed, setHasAgreed] = useState(false); // State to manage the checkbox
 
     const navigate = useNavigate();
 
@@ -33,9 +35,9 @@ const Signup = () => {
         } catch (error) {
             console.error("Error signing up:", error);
             if (error.code === 'auth/email-already-in-use') {
-                setErrorMessage('Email is already in use'); // Set error message
+                setErrorMessage('Email is already in use');
             } else {
-                setErrorMessage(error.message); // For other errors, set the error message returned by Firebase
+                setErrorMessage(error.message);
             }
         }
     };
@@ -57,11 +59,21 @@ const Signup = () => {
                     </label>
                 </div>
                 <div className="col">
-                    <button type="submit">Sign Up</button>
+                    <label>
+                        <input 
+                            type="checkbox" 
+                            onChange={() => setHasAgreed(!hasAgreed)} // Toggle the checkbox state
+                            required 
+                        />
+                        I have read and agree to the <a href="/terms" className="terms-privacy-links">Terms of Service</a> and <a href="/privacy" className="terms-privacy-links">Privacy Policy</a>
+                    </label>
                 </div>
-                {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Conditionally render error message */}
+                <div className="col">
+                    <button type="submit" disabled={!hasAgreed}>Sign Up</button> {/* Disable the button if not agreed */}
+                </div>
+                {errorMessage && <div className="error-message">{errorMessage}</div>}
                 <div className="member-check">
-                    Already a member? <a href="/login">Sign in now</a>
+                    <a href="/login">Already a member? Sign in now</a>
                 </div>
             </form>
         </div>

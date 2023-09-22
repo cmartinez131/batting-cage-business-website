@@ -19,6 +19,8 @@ const AppRoutes = () => (
         <Route path="/locations" element={<Login />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/get-updates" element={<GetUpdates />} />
+        {/* terms */}
+        {/* privact */}
     </Routes>
 );
 

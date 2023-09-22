@@ -123,3 +123,24 @@
     margin-right: auto; /* Center the block horizontally */
     border-radius: 5px; /* Optional: for rounded corners */
 }
+
+.terms-privacy-links {
+    color: #007bff; /* You can choose any color */
+    text-decoration: underline; /* Underline the links */
+    cursor: pointer; /* Change cursor to pointer when hovering over the links */
+}
+
+.member-check {
+    text-align: center; /* Center the text horizontally */
+}
+
+.member-check a {
+    color: #1e90ff; /* Set the text color to #1e90ff */
+    text-decoration: none; /* Remove underline from the link */
+    padding: 2px; /* Add a little padding around the link text */
+    border-radius: 3px; /* Optional: for rounded corners */
+}
+
+.member-check a:hover {
+    color: #e6e6e6;
+}

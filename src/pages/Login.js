@@ -25,7 +25,7 @@ const Login = () => {
     return (
         <div className="container center-content">
             <h1>Log In</h1>
-            <form className="row row-col" onSubmit={logIn}>
+            <form className="row row-col form-background" onSubmit={logIn}> {/* Added form-background class */}
                 <div className="col">
                     <label>
                         Email:
@@ -42,6 +42,9 @@ const Login = () => {
                     <button type="submit">Log In</button>
                 </div>
                 {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Conditionally render error message */}
+                <div className="member-check">
+                    <a href="/signup">Not a member? Sign up now</a> {/* Adjusted the text and link */}
+                </div>
             </form>
         </div>
     );

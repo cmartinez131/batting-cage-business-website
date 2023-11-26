@@ -1,0 +1,105 @@
+.booking-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+    padding-top: 0px;
+    margin-top: 10px;
+}
+
+.booking-title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.date-picker {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.date {
+    flex: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.date.selected {
+    background-color: #e0e0e0;
+}
+
+.time-slot-container {
+    height: 220px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.time-slot {
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.time-slot:hover {
+    background-color: #e0e0e0;
+}
+
+.time-slot.selected {
+    background-color: #c0e0c0;
+}
+
+.time-slot.unavailable {
+    background-color: #848884;
+    color: #E5E4E2;
+    cursor: not-allowed;
+}
+
+.cart {
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.reservation-list {
+    margin-bottom: 15px;
+}
+
+.reservation-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.total-price {
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.checkout-button {
+    background-color: #4AB1EF;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.checkout-button:hover {
+    background-color: #3998D0;
+}

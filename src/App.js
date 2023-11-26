@@ -29,7 +29,6 @@ const App = () => {
     <>
       <Router>
         <Navbar user={user}/>
-        {/* <NewNavbar /> */}
         <Body user={user}/>
         <Footer />
       </Router>

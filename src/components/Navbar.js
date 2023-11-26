@@ -13,6 +13,14 @@ const Navbar = ({ user }) => {
         else setActiveDropdown(dropdown); // Open the dropdown
     }
 
+    const handleLogout = () => {
+        auth.signOut().then(() => {
+            window.location.href = '/login'; // redirect to login page after logout
+        }).catch((error) => {
+           
+        });
+    }
+
     return (
         <nav className="nav">
             <Link className='title' to="/">
@@ -61,17 +69,20 @@ const Navbar = ({ user }) => {
                 </div>
             </div>
 
-            <div className='loginButtons'>
+            <div className="bookingButton">
+                <Link className="button" to="/book">Book a Cage</Link>
+            </div>
+
+            
+            {/* Account/Login Button */}
+            <div className='accountButton'>
                 {user ? (
                     <>
-                        <span>{user.email}</span>
-                        <button className="button" onClick={() => auth.signOut()}>Logout</button>
+                        <Link className="button" to="/account">Account</Link>
+                        <button className="button" onClick={handleLogout}>Logout</button>
                     </>
                 ) : (
-                    <>
-                        <Link className="button" to="/signup">Sign Up</Link>
-                        <Link className="button" to="/login">Log In</Link>
-                    </>
+                    <Link className="button" to="/login">Account</Link>
                 )}
             </div>
         </nav>

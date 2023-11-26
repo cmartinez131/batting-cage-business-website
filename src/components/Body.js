@@ -5,12 +5,14 @@ import HowItWorks from '../pages/HowItWorks';
 import Mission from '../pages/Mission';
 import Memberships from '../pages/Memberships';
 import ProShop from '../pages/ProShop';
+import Book from '../pages/Book';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Features from '../pages/Features';
 import Locations from '../pages/Locations';
 import Blog from '../pages/Blog';
 import GetUpdates from '../pages/GetUpdates';
+import Account from '../pages/Account.js'
 import UserProfile from '../pages/UserProfile';
 import '../styles.css'
 
@@ -24,12 +26,14 @@ const Body = ({ user }) => {
             <Route path="/mission" element={<Mission />} />
             <Route path="/pro-shop" element={<ProShop />} />
             <Route path="/memberships" element={<Memberships />} />
+            <Route path="/book" element={<Book />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/features" element={<Features />} />
             <Route path="/locations" element={<Locations />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/get-updates" element={<GetUpdates />} />
+            <Route path="/account" element={<Account /> } />
             <Route path="/profile" element={<UserProfile user={user} />} />
         </Routes>
     );

@@ -40,24 +40,20 @@ img {
 .row {
     display: flex;
     justify-content: space-between;
-    border: 2px solid yellow;
 }
 
 .col {
     flex: 1;
     padding: 15px;
     box-sizing: border-box;
-    border: 2px solid red; /* Red border for 'col' */
 }
 
 .col-wider {
     flex: 2;
-    border: 2px solid blue; /* Blue border for 'col-wider' */
 }
 
 .col-even-wider {
     flex: 3;
-    border: 2px solid green; /* Green border for 'col-even-wider' */
 }
 
 .center {
@@ -105,3 +101,4 @@ img {
     border-radius: 4px;
     padding: 5px;
 }
+

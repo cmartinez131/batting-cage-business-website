@@ -5,10 +5,8 @@ import coverImage from '../assets/home-cover.png';
 const HowItWorks = () => {
     return (
         <div className="container">
-            <div className="row">
-                <div className="col">
-                    <img src={coverImage} alt="Cover" className="cover-image" />
-                </div>
+            <div className="home-cover-image">
+                <h1 className="cover-title">How it Works</h1>
             </div>
             <div className="row">
                 <div className="col">

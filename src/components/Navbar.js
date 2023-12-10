@@ -31,7 +31,6 @@ const Navbar = ({ user }) => {
             <div className={`dropdown ${activeDropdown === 'cage' ? 'active' : ''}`}>
                 <button className="dropbtn" onClick={() => toggleDropdown('cage')}>The Cage</button>
                 <div className="dropdown-content">
-                    <Link className='navLink' to="/about">About</Link>
                     <Link className='navLink' to="/features">What We Offer</Link>
                     <Link className='navLink' to="/how-it-works">How It Works</Link>
                     <Link className='navLink' to="/locations">Our Locations</Link>
@@ -44,6 +43,9 @@ const Navbar = ({ user }) => {
                 <button className="dropbtn" onClick={() => toggleDropdown('adults')}>Adults</button>
                 <div className="dropdown-content">
                     <Link className='navLink' to="/memberships">Memberships</Link>
+                    <Link className='navLink' to="/memberships">Automatic Machines</Link>
+                    <Link className='navLink' to="/memberships">Adult Leagues</Link>
+
                 </div>
             </div>
 
@@ -51,6 +53,8 @@ const Navbar = ({ user }) => {
                 <button className="dropbtn" onClick={() => toggleDropdown('kids')}>Kids</button>
                 <div className="dropdown-content">
                     <Link className='navLink' to="/memberships">Memberships</Link>
+                    <Link className='navLink' to="/memberships">Kids Summer Camp</Link>
+                    <Link className='navLink' to="/memberships">Kids Private Coaching</Link>
                 </div>
             </div>
 

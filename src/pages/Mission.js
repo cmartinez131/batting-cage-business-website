@@ -1,4 +1,5 @@
 import './pageStyles.css';
+import './Mission.css';
 
 
 const coverImage = 'https://pso.cfaes.ohio-state.edu/sites/ctpp/files/imce/baseball_grass.png';
@@ -8,7 +9,7 @@ const Mission = () => {
     return (
         <div className="container mission">
             <div className='row center-content cover-container'>
-                <img src={coverImage} alt="Cover" className='img-med' />
+                <img src={coverImage} alt="Cover" className='img-small' />
                 <div className="cover-text">Our Mission</div>
             </div>
             

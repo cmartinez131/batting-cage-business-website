@@ -103,11 +103,13 @@
 }
 
 .cover-text {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
     position: absolute;
     top: 40%;
     left: 60%;
     transform: translate(-50%, -50%);
-    color: black;
     font-size: 86px; /* adjust the size as needed */
     font-weight: bold; /* optional, for bold text */
 }

@@ -3,8 +3,22 @@ import homepage1 from '../assets/homepage1.png';
 import homepage2 from '../assets/homepage2.png';
 import homepage3 from '../assets/homepage3.png';
 import homepage4 from '../assets/homepage4.png';
+import cages from '../assets/features/image2.png'
+import battingVideo1 from '../assets/battingvideo1.mp4'
+import battingVideo2 from '../assets/battingvideo2.mp4'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+    const navigate = useNavigate();
+    
+    const handleReserveClick = () => {
+        navigate('/book');
+    }
+    
+    const handleLearnMoreClick = () => {
+        navigate('features');
+    }
+
     return (
         <div className="home">
             <div className="home-cover-image">
@@ -13,17 +27,21 @@ const Home = () => {
             <div className="home-intro-container">
                 <div className='reserve-button-container'>
                     <p>Swing into the Future at The Cage: Your Ultimate Batting Destination.</p>
-                    <button className="reserve-button">RESERVE NOW</button>
+                    <button className="reserve-button" onClick={handleReserveClick}>RESERVE NOW</button>
+                    
                 </div>
                 <div className="video-placeholder">
-                    Video of people playing
+                    <video autoPlay loop muted>
+                        <source src={battingVideo1} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
             <div className="home-container-3">
                 <div className='container-3-text'>
                     <p>Whether you're a rookie or a seasoned pro, an unforgettable experience awaits you at Batting Blvd. Book cages, take lessons, host a team event, join a league, and more.</p>
                     <p>Reserve a batting cage for as low as $30/hr. Swing by Batting Blvd and let's hit it out of the park!</p>
-                    <button className="learn-more-button">LEARN MORE</button>
+                    <button className="learn-more-button" onClick={handleLearnMoreClick}>LEARN MORE</button>
                 </div>
             </div>
             <div className="home-image-container">

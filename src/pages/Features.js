@@ -16,8 +16,8 @@ import img11 from '../assets/features/image11.png'
 const Features = () => {
     return (
         <div className="container features">
-            <div className="row">
-                <img src={coverImage} alt="Cover" className="cover-image" />
+            <div className="home-cover-image">
+                <h1 className="cover-title">Features</h1>
             </div>
             <div className="row">
                 <div className="col">

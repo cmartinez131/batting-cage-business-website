@@ -51,7 +51,8 @@
 }
 
 .page-link {
-    color: #00D1FF;
+    color: orange;
+    /* color: #00D1FF; */
     font-weight: bold;
     text-decoration: none;
 }
@@ -71,7 +72,8 @@
 
 .third-column p,
 .third-column li {
-    color: #00D1FF;
+    color: orange;
+    /* color: #00D1FF; */
 }
 
 .third-column ul {

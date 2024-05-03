@@ -7,7 +7,7 @@
 }
 
 .home-cover-image {
-    background-image: url('../assets/home-cover.png');
+    background-image: url('../assets/battinghero1.png');
     height: 550px;
     background-position: center;
     background-repeat: no-repeat;
@@ -174,4 +174,185 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* new */
+
+.hero-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000; /* This is just a fallback in case the image doesn't load */
+    height: 550px;
+    position: relative;
+}
+
+.hero-text-container {
+    width: 25%;
+    padding: 0 2%; /* Left and right padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-left: 5%;
+}
+
+.hero-title {
+    color: white; /* Change the text color as needed */
+    font-size: 3.5rem; /* Adjust font size as needed */
+}
+
+.make-reservation-button {
+    background-color: orange;
+    color: white;
+    font-size: 1.25rem;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease; /* For a hover effect */
+}
+
+.make-reservation-button:hover {
+    background-color: #e69500; 
+}
+
+.hero-image-container {
+    width: 75%;
+    height: 100%;
+    overflow: hidden; /* Hide overflow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-image-container img {
+    width: auto;
+    height: 100%; /* Set height to match the parent container */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.home-hook-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 550px;
+    position: relative;
+    background-color: #f0f0f0;
+    
+}
+
+.hook-text-container {
+    width: 45%;
+    padding-left: 2%; /* Adjust padding as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* New styles for the text container */
+    
+    padding: 3rem; /* Padding inside the box */
+    margin: 1rem; /* Margin around the box for separation from other elements */
+    text-align: center; /* Center the text inside the box */
+    
+}
+
+.hook-title {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hook-subtitle {
+    color: rgb(48, 48, 48);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hook-video-container {
+    width: 75%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hook-video-container video {
+    width: auto;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.home-tutorial-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem;
+    height: 550px;
+    position: relative;
+}
+
+.tutorial-title {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.tutorial-subtitle {
+    color: #666; /* Medium-dark color for subtitle */
+    font-size: 1.5rem; /* Readable font size for the subtitle */
+    margin-bottom: 2rem;
+}
+
+.tutorial-button {
+    background-color: orange; /* Coral color for the button */
+    color: white;
+    font-size: 1.25rem;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.home-learn-more-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center align the content vertically and horizontally */
+    background-color: #f0f0f0; /* A slightly off-white background for contrast */
+    padding: 3rem;
+    margin: 2rem 0; /* Add some top and bottom margin for separation */
+}
+
+.learn-more-text {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    color: #333; /* Darker text color for better readability */
+    max-width: 700px; /* Set a max-width for the text for optimal line length */
+    text-align: center; /* Center the text */
+    padding: 1rem; /* Padding around the text for spacing */
+}
+
+.home-learn-more-button {
+    background-color: orange;
+    color: white;
+    font-size: 1rem;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 20px; /* Space above the button */
+    transition: background-color 0.3s ease;
+}
+
+.home-learn-more-button:hover {
+    background-color: #e67350; /* Slightly darker coral on hover */
 }

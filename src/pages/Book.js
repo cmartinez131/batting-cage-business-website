@@ -123,7 +123,7 @@ const Book = () => {
     return (
         <div className="booking-container">
             <div className="booking-title-container">
-                <h1>Book a table</h1>
+                <h1>Book a Cage</h1>
             </div>
             <div className="date-picker">
                 {dates.map((date, index) => (

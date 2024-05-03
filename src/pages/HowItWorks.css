@@ -1,33 +1,116 @@
-.my-container {
-    background-color: white;
-    border-radius: 10px;
-    padding: 0px;
-    margin: 0px auto;
-    max-width: 60%;
-    color: white;
-    text-align: center;
-}
 
-.cover-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.my-row {
-    justify-content: center;
-    border-radius: 10px;
+.how-it-works-container {
     text-align: center;
-    background-color: #007BFF; /* Blue background */
-    font-size: 30px;
-    width: 80%;
-    height: 80%;
-    padding: 10px;
-    margin-left: 10%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
+    padding-bottom: 2rem;
+    /* background-color: #e67350; */
 }
 
-.page-heading {
-    font-size: 35px;
+.header-section {
+    background-size: cover;
+    padding: 50px 0;
+}
+
+.cover-title {
+    color: white;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.steps-header {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.75rem;
+    color: #000; /* Choose a color that fits your design */
+}
+
+.steps-section {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.step {
+    width: 20%;
+    margin: 0 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.number-circle {
+    background-color: #FF337A; /* Dark pink circle */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.step-title {
+    color: #212529;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.step-description {
+    color: #6c757d;
+    font-size: 1.25rem;
+}
+
+.cta-section {
+    margin-top: 40px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: #FF337A;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e67350;
+}
+
+.step-action-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff; /* Bootstrap primary blue */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.step-action-button:hover {
+    background-color: #0056b3; /* A darker shade of blue for hover state */
+}
+
+@media (max-width: 768px) {
+    .steps-section {
+        flex-direction: column;
+    }
+    
+    .step {
+        width: 80%;
+        margin: 20px auto;
+    }
+    
+    .cover-title {
+        font-size: 2.5rem;
+    }
 }

@@ -4,34 +4,67 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 5px;
     padding-bottom: 10px;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the navbar is above other content */
+}
+
+.title-and-logo-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.navbar-items-container {
+    flex-grow: 2;
+    display: flex;
+    justify-content: space-around; /* Or space-between, depending on your preference */
+    align-items: center;
+    text-align: center;
     flex-wrap: wrap;
 }
 
+.action-buttons-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end; /* Aligns the action buttons to the right */
+}
+
+.action-buttons .button, .action-buttons .accountButton, .action-buttons .bookingButton {
+    margin-left: 10px; /* Adjust spacing between buttons */
+    margin-right: 10px;
+}
+
+
+.logo {
+    height: 70px;
+    width: auto;
+    margin-right: 10px; /* Adjust this as needed */
+    display: block;
+    align-items: center;
+}
+
 .title {
-    flex: 3;
-    font-size: 30px;
-    font-weight: 800;
     display: flex;
     align-items: center;
     color: inherit;
     text-decoration: none;
-}
-
-.logo {
-    height: 80px;
-    width: auto;
-    margin-left: 30px;
-    margin-right: 10px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    display: flex;
-    align-items: center;
+    font-size: 28px;
+    font-weight: 600;
 }
 
 .navLink {
     padding: 20px;
+    font-size: 16px;
 }
 
 /* Dropdown styling */
@@ -44,11 +77,12 @@
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #e1e1e1;
     min-width: 140px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
     z-index: 1;
-    border-top: 3px solid #75C2F6;
+    border-top: 3px solid orange;
+    /* border-top: 3px solid #75C2F6; */
     text-align: center;
     transition: opacity .1s linear 0s, visibility 0s linear .1s;
 }
@@ -69,19 +103,21 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #75C2F6;
+    /* background-color: #75C2F6; */
+    background-color: orange;
     color: white;
 }
 
 .dropbtn {
     background-color: white;
     color: black;
-    font-size: 20px;
+    font-size: 19px;
     border: none;
     cursor: pointer;
-    width: 140px; /* add this line */
+    width: 130px; /* add this line */
     height: 40px;
     text-align: center;
+    margin: -5px;
 }
 
 .dropbtn:hover {
@@ -93,7 +129,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     margin-left: 5px;
     margin-right: 5px;
@@ -106,6 +142,10 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,.1);
 }
 
+/* .accountButton {
+    margin-left: 5px;
+    margin-right: 30px;
+} */
 .accountButton {
     margin-left: 5px;
     margin-right: 30px;
@@ -121,18 +161,24 @@
         flex-direction: column; /* Stack items vertically */
     }
     
-    .dropdown, .accountButton {
-        width: 100%; /* Take full width */
+    .dropdown {
         text-align: center; /* Center the text */
+        margin: 5px 0;
     }
     
     .dropbtn, .button {
-        font-size: 16px; /* Reduce font size */
-        padding: 8px; /* Reduce padding */
+        font-size: 14px;
+        padding: 6px; 
+        margin: 0 auto;
+        display: block;
     }
     
     .navLink {
-        padding: 10px; /* Reduce padding */
+        padding: 8px; /* Reduce padding */
+    }
+    .dropdown-content a {
+        font-size: 14px; /* Reduced font size to match other adjustments */
+        padding: 8px 12px; /* Optionally adjust padding for better touch targets */
     }
     .dropdown-content {
         position: static; /* Override position */
@@ -140,8 +186,32 @@
         opacity: 1; /* Override opacity */
         display: none; /* Initially hide */
     }
+    
 
     .dropdown.active .dropdown-content {
         display: block; /* Display when active */
     }
+
+    .navbar-items-container {
+        justify-content: center; /* Override for smaller screens if needed */
+        flex-wrap: wrap; /* Allows items to wrap to the next line on small screens */
+    }
+
+    .bookingButton {
+        margin-bottom: 10px;
+    }
+
+    
+    .accountButton {
+        margin-left: 0px; /* override the margin on smaller screens so that it is centered */
+        margin-right: 0px;
+    }
+    
+    .title {
+        font-size: 20px; /* Even smaller on very small screens */
+    }
+    .logo {
+        height: 50px; /* Adjust the logo size for smaller screens */
+    }
+
 }

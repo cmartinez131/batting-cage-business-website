@@ -12,6 +12,8 @@ import img9 from '../assets/features/image9.png'
 import img10 from '../assets/features/image10.png'
 import img11 from '../assets/features/image11.png'
 
+import './Features.css';
+
 
 const Features = () => {
     return (

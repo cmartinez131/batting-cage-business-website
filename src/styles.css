@@ -1,7 +1,8 @@
 body {
     background-color: lightblue;
     font-family: sans-serif;
-  
+    padding-top: 80px; /* Adjust this value based on the actual height of your navbar */
+
 }
 
 html, body {

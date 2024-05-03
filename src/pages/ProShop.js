@@ -1,8 +1,8 @@
 const ProShop = () => {
     return (
         <>
-            <h1>This is our Pro Shop</h1>
-            <p>buy stuff!</p>
+            <h1>This is our Pro Shop. Shop the latest equipment.</h1>
+            <p>Page under construction...</p>
         </>
     )
 }

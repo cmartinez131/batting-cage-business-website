@@ -1,101 +1,73 @@
+import React, { useEffect } from 'react';
 import './pageStyles.css';
 import coverImage from '../assets/home-cover.png';
-import img1 from '../assets/features/image1.png'
-import img2 from '../assets/features/image2.png'
-import img3 from '../assets/features/image3.png'
-import img4 from '../assets/features/image4.png'
-import img5 from '../assets/features/image5.png'
-import img6 from '../assets/features/image6.png'
-import img7 from '../assets/features/image7.png'
-import img8 from '../assets/features/image8.png'
-import img9 from '../assets/features/image9.png'
-import img10 from '../assets/features/image10.png'
-import img11 from '../assets/features/image11.png'
-
+import img3 from '../assets/features/image3.png';
+import img5 from '../assets/features/image5.png';
+import hittrax1 from '../assets/features/hittrax1.jpeg';
+import hittrax2 from '../assets/features/hittraxexample.png';
 import './Features.css';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Features = () => {
-    return (
-        <div className="container features">
-            <div className="home-cover-image">
-                <h1 className="cover-title">Features</h1>
-            </div>
-            <div className="row">
-                <div className="col">
-                    <h2 className="features-header">Features:</h2>
-                    <ul>
-                        <li>8 Batting Cages</li>
-                        <li>6 Regular Pitching Machines or Soft Toss</li>
-                        <li>2 High Tech Automatic Pitching Machines with App Compatibility</li>
-                        <li>Clean and Safe</li>
-                        <li>book cage for pitching analysis</li>
-                    </ul>
-                </div>
-                <div className="col"><img src={img1} alt="img" /></div>
-                <div className="col"><img src={img2} alt="img" /></div>
-            </div>
-            <div className="row">
-                <div className="col"><img src={img3} alt="img" /></div>
-                <div className="col"><img src={img4} alt="img" /></div>
-                <div className="col">
-                    <h2 className="features-header">Advanced Pitching Machines</h2>
-                    <ul>
-                        <li>control pitches with an app or have a friend throw them to you</li>
-                        <li>connects to iphone app</li>
-                        <li>technology integration</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col">
-                    <h2 className="features-header">Multi-Purpose Practice and Warm up Areas</h2>
-                    <ul>
-                        <li>curtain system to open up cages</li>
-                    </ul>
-                </div>
-                <div className="col"><img src={img5} alt="img" /></div>
-                <div className="col"><img src={img6} alt="img" /></div>
-            </div>
-            <div className="row">
-            <div className="col col-wider"><img src={img7} alt="img" /></div>
-                <div className="col">
-                    <h2 className="features-header">Equipment Included</h2>
-                    <ul>
-                        <li>safety equipment included such as nets and helmets</li>
-                        <li>rent of bring yout own bats</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col">
-                    <h2 className="features-header">Comfortable Spectator Area</h2>
-                    <ul>
-                        <li>booth or a table with barstools as a spectator area</li>
-                    </ul>
-                </div>
-                <div className="col col-wider center-content"><img src={img8} alt="img" className='img-med' /></div>
-                <div className="col col-wider center-content"><img src={img9} alt="img" /></div>
-            </div>
-            <div className="row">
-                <div className="col center"><h2>(Coming Soon)</h2></div>
-            </div>
-            <div className="row">
-                <div className="col">
-                    <h2>Technology integration such as pitch analysis, hit analysis and app integration</h2>
-                </div>
-                <div className="col col-wider"><img src={img10} alt="img" /></div>
-            </div>
-            <div className="row">
 
-                <div className="col col-wider">
-                <div className="col"><img src={img11} alt="img" /></div>
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
+    return (
+        <div className="features-container">
+            <h1 className="feature-page-title">What We Offer</h1>
+            <div className="feature-item" data-aos="fade-up" data-aos-delay="100">
+                <div className="feature-text">
+                    <h2 className="feature-title">Batting Cages</h2>
+                    <p className="feature-description">6 state-of-the-art batting cages designed for various skill levels featurng baseball, fastpitch, and slowpitch softball are available.</p>
                 </div>
-                <div className="col"><h2>Full Concession Stand with snacks</h2></div>
+                <img src={img5} alt="Batting Cages" className="features-img" />
             </div>
-            
+            <div className="feature-item" data-aos="fade-up" data-aos-delay="100">
+                <div className="feature-text">
+                    <h2 className="feature-title">Advanced Pitching Machines</h2>
+                    <p className="feature-description">Advanced pitching machines simulate batting against your favorite MLB pitchers like Shohei Ohtani or Mariano Rivera.</p>
+                    <p className="feature-description">Other pitching machine features:</p>
+                    <ul className="feature-list">
+                        <li>Pitches fastballs, curveballs, sliders, changeups, and more</li>
+                        <li>Reaches a maximum speed of 100 mph</li>
+                        <li>Offers baseball, softball, and combo options</li>
+                        <li>Compatible with both dimpled and leather balls</li>
+                    </ul>
+                </div>
+                <img src={img3} alt="Pitching Machines" className="features-img" />
+            </div>
+            <div className="feature-item" data-aos="fade-up" data-aos-delay="100">
+                <div className="feature-text">
+                    <h2 className="feature-title">Data Capture Simulation System</h2>
+                    <p className="feature-description">Enhance your training with HitTrax™ real-time statistics and key-performance metrics such as:</p>
+                    <ul className="feature-list">
+                        <li>Ball Velocity</li>
+                        <li>Distance</li>
+                        <li>Pitch Speed</li>
+                        <li>Strike Zone Analysis</li>
+                    </ul>
+                </div>
+                <img src={hittrax1} alt="Hittrax image 1" className="features-img" />
+            </div>
+            <div className="feature-item" data-aos="fade-up" data-aos-delay="100">
+                <div className="feature-text">
+                    <h2 className="feature-title">App Integration</h2>
+                    <p className="feature-description">Enhance your experience with our integrated app. Features include:</p>
+                    <ul className="feature-list">
+                        <li>Pay through the app with secure transactions</li>
+                        <li>Save and earn rewards points for each visit</li>
+                        <li>Receive exclusive discounts and offers</li>
+                        <li>Select your pitch type and speed through the app</li>
+                        <li>Save and analyze your HitTrax data sessions</li>
+                    </ul>
+                </div>
+                <img src={hittrax2} alt="App Integration" className="features-img" /> {/* Placeholder image */}
+            </div>
         </div>
-    )
+    );
 }
 
 export default Features;

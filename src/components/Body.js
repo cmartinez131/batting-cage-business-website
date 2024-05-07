@@ -5,6 +5,7 @@ import HowItWorks from '../pages/HowItWorks';
 import Mission from '../pages/Mission';
 import Memberships from '../pages/Memberships';
 import ProShop from '../pages/ProShop';
+import Faq from '../pages/Faq.js'
 import Book from '../pages/Book';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
@@ -25,6 +26,7 @@ const Body = ({ user }) => {
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/mission" element={<Mission />} />
             <Route path="/pro-shop" element={<ProShop />} />
+            <Route path="/faq" element={<Faq />} />
             <Route path="/memberships" element={<Memberships />} />
             <Route path="/book" element={<Book />} />
             <Route path="/signup" element={<Signup />} />

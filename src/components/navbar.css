@@ -11,7 +11,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensures the navbar is above other content */
+    z-index: 1000; /* ensures the navbar is above other content */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .title-and-logo-container {
@@ -27,20 +28,21 @@
 .navbar-items-container {
     flex-grow: 2;
     display: flex;
-    justify-content: space-around; /* Or space-between, depending on your preference */
+    justify-content: space-around;
     align-items: center;
     text-align: center;
     flex-wrap: wrap;
+    padding-left: 10px;
 }
 
 .action-buttons-container {
     flex-grow: 1;
     display: flex;
-    justify-content: flex-end; /* Aligns the action buttons to the right */
+    justify-content: flex-end;
 }
 
 .action-buttons .button, .action-buttons .accountButton, .action-buttons .bookingButton {
-    margin-left: 10px; /* Adjust spacing between buttons */
+    margin-left: 10px;
     margin-right: 10px;
 }
 
@@ -48,7 +50,7 @@
 .logo {
     height: 70px;
     width: auto;
-    margin-right: 10px; /* Adjust this as needed */
+    margin-right: 10px;
     display: block;
     align-items: center;
 }
@@ -58,16 +60,15 @@
     align-items: center;
     color: inherit;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 1.8rem;
     font-weight: 600;
 }
 
 .navLink {
     padding: 20px;
-    font-size: 16px;
+    font-size: 1.5rem;
 }
 
-/* Dropdown styling */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -98,7 +99,7 @@
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    font-size: 18px;
+    font-size: 20px;
     transition: background-color .1s ease, color .1s ease;
 }
 
@@ -111,13 +112,15 @@
 .dropbtn {
     background-color: white;
     color: black;
-    font-size: 19px;
+    font-size: 22px;
+    /* font-weight: 500; */
     border: none;
     cursor: pointer;
-    width: 130px; /* add this line */
+    width: 130px;
     height: 40px;
     text-align: center;
     margin: -5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .dropbtn:hover {
@@ -129,7 +132,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 500;
     margin-left: 5px;
     margin-right: 5px;
@@ -155,6 +158,15 @@
     background-color: #EEEDED;
 }
 
+.shopButton {
+    border-bottom: 3px solid transparent;
+    /* transition: border-color 0.3s; Smooth transition for border color */
+}
+
+.shopButton:hover {
+    border-bottom-color: orange;
+}
+
 /* Media Query for small screens */
 @media (max-width: 768px) {
     .nav {
@@ -174,17 +186,17 @@
     }
     
     .navLink {
-        padding: 8px; /* Reduce padding */
+        padding: 8px;
     }
     .dropdown-content a {
-        font-size: 14px; /* Reduced font size to match other adjustments */
-        padding: 8px 12px; /* Optionally adjust padding for better touch targets */
+        font-size: 14px;
+        padding: 8px 12px;
     }
     .dropdown-content {
-        position: static; /* Override position */
-        visibility: visible; /* Override visibility */
-        opacity: 1; /* Override opacity */
-        display: none; /* Initially hide */
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        display: none;
     }
     
 
@@ -193,7 +205,9 @@
     }
 
     .navbar-items-container {
-        justify-content: center; /* Override for smaller screens if needed */
+        padding-left: 0;
+        margin-left: 0;
+        justify-content: center;
         flex-wrap: wrap; /* Allows items to wrap to the next line on small screens */
     }
 
@@ -211,7 +225,6 @@
         font-size: 20px; /* Even smaller on very small screens */
     }
     .logo {
-        height: 50px; /* Adjust the logo size for smaller screens */
+        height: 50px;
     }
-
 }

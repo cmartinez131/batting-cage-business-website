@@ -21,6 +21,10 @@ const Navbar = ({ user }) => {
         });
     }
 
+    const handleNavLinkClick = () => {
+        window.scrollTo(0, 0);
+    }
+
     return (
         <nav className="nav">
             <div className="title-and-logo-container">
@@ -36,27 +40,29 @@ const Navbar = ({ user }) => {
                 <div className={`dropdown ${activeDropdown === 'cage' ? 'active' : ''}`}>
                     <button className="dropbtn" onClick={() => toggleDropdown('cage')}>The Cage</button>
                     <div className="dropdown-content">
-                        <Link className='navLink' to="/features">Features</Link>
-                        <Link className='navLink' to="/how-it-works">How It Works</Link>
-                        <Link className='navLink' to="/locations">Locations</Link>
-                        <Link className='navLink' to="/memberships">Automatic Machines</Link>
-                        <Link className='navLink' to="/how-it-works">FAQs</Link>
+                        <Link className='navLink' to="/features" onClick={handleNavLinkClick}>Features</Link>
+                        <Link className='navLink' to="/how-it-works" onClick={handleNavLinkClick}>How It Works</Link>
+                        <Link className='navLink' to="/locations" onClick={handleNavLinkClick}>Locations</Link>
+                        <Link className='navLink' to="/faq" onClick={handleNavLinkClick}>FAQs</Link>
                         {/* need to add a route and page for faqs. use pingpod for inspiration */}
-                        
+
                     </div>
                 </div>
 
                 {/* Similar modifications for other dropdowns */}
                 <div className={`dropdown ${activeDropdown === 'adults' ? 'active' : ''}`}>
-                    <button className="dropbtn" onClick={() => toggleDropdown('adults')}>Adults</button>
+                    <button className="dropbtn" onClick={() => toggleDropdown('adults')}>Programs</button>
                     <div className="dropdown-content">
-                        <Link className='navLink' to="/memberships">Adult Memberships</Link>
-                        <Link className='navLink' to="/memberships">Adult Leagues</Link>
+                        <Link className='navLink' to="/memberships" onClick={handleNavLinkClick}>Adult Memberships</Link>
+                        <Link className='navLink' to="/memberships" onClick={handleNavLinkClick}>Kids Memberships</Link>
+                        <Link className='navLink' to="/memberships" onClick={handleNavLinkClick}>Kids Summer Camp</Link>
+                        <Link className='navLink' to="/memberships" onClick={handleNavLinkClick}>Adult Leagues</Link>
+                        <Link className='navLink' to="/memberships" onClick={handleNavLinkClick}>Private Coaching</Link>
 
                     </div>
                 </div>
 
-                <div className={`dropdown ${activeDropdown === 'kids' ? 'active' : ''}`}>
+                {/* <div className={`dropdown ${activeDropdown === 'kids' ? 'active' : ''}`}>
                     <button className="dropbtn" onClick={() => toggleDropdown('kids')}>Kids</button>
                     <div className="dropdown-content">
                         <Link className='navLink' to="/memberships">Kids Memberships</Link>
@@ -64,31 +70,31 @@ const Navbar = ({ user }) => {
                         <Link className='navLink' to="/memberships">Kids Private Coaching</Link>
                     </div>
                 </div>
-
-                <div className={`dropdown ${activeDropdown === 'proShop' ? 'active' : ''}`}>
-                    <button className="dropbtn" onClick={() => toggleDropdown('proShop')}>Shop</button>
-                    <div className="dropdown-content">
-                        <Link className='navLink' to="/pro-shop">Pro Shop</Link>
-                    </div>
-                </div>
+                 */}
 
                 <div className={`dropdown ${activeDropdown === 'about' ? 'active' : ''}`}>
                     <button className="dropbtn" onClick={() => toggleDropdown('about')}>About</button>
                     <div className="dropdown-content">
-                        <Link className='navLink' to="/about">About</Link>
-                        <Link className='navLink' to="/mission">Our Mission</Link>
-                        <Link className='navLink' to="/blog">Blog</Link>
+                        <Link className='navLink' to="/about" onClick={handleNavLinkClick}>About</Link>
+                        <Link className='navLink' to="/mission" onClick={handleNavLinkClick}>Our Mission</Link>
+                        <Link className='navLink' to="/faq" onClick={handleNavLinkClick}>FAQs</Link>
+                        <Link className='navLink' to="/blog" onClick={handleNavLinkClick}>Blog</Link>
                     </div>
+                </div>
+                <div className={`dropdown ${activeDropdown === 'proShop' ? 'active' : ''}`}>
+                    <Link to="/pro-shop" onClick={handleNavLinkClick}>
+                        <button className="dropbtn shopButton" onClick={() => toggleDropdown('proShop')}>Pro Shop</button>
+                    </Link>
+                    {/* <div className="dropdown-content">
+                        <Link className='navLink' to="/pro-shop">Pro Shop</Link>
+                    </div> */}
                 </div>
             </div>
 
             <div className="action-buttons-container">
-
-
                 <div className="bookingButton">
                     <Link className="button" to="/book">Book a Cage</Link>
                 </div>
-
 
                 {/* Account/Login Button */}
                 <div className='accountButton'>

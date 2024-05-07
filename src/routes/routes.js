@@ -23,6 +23,7 @@ const AppRoutes = () => (
         <Route path="/blog" element={<Blog />} />
         <Route path="/get-updates" element={<GetUpdates />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/faq" element={<Faq />} />
         {/* terms */}
         {/* privact */}
     </Routes>

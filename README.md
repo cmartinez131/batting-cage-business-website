@@ -1,76 +1,24 @@
-# batting-cage-business-website
 
-This repository contains a website for a Batting Cage Business. 
-It aims to have real-time booking, user accounts, and a modern interface to enhance online presence and streamline customer bookings.
+# Batting Cage Business Website
 
-# Getting Started with Create React App
+This repository hosts code for a Batting Cage Booking Website, designed to streamline the booking process for a batting cage business through an intuitive user experience. This web application provides a solution for users to book batting cages by the hour, manage accounts, and easily navigate through the interface. The aim is to enhance the online presence of batting facilities and provide a smooth booking experience for all.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Key Features
 
-## Available Scripts
+- **Real-Time Booking**: Users can book batting cages in real-time with up-to-date availability.
+- **User Authentication**: Secure login and registration functionality, powered by Firebase Authentication.
+- **Dynamic User Interfaces**: Engaging and responsive design allows users to browse available slots and finalize bookings with ease and find out more information on the business.
+- **Mobile Friendly**: Fully responsive design that works across all devices and screen sizes.
 
-In the project directory, you can run:
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: For building a dynamic and speedy interface.
+-  **HTML/CSS**: Used to craft custom layouts and design elements, providing a visually appealing and smooth user experience.
+-  **Node.js**: Serves as the runtime environment for managing the application’s server-side processes.
+- **Firebase**:
+  - **Firestore**: To store and retrieve user data and booking information in real-time.
+  - **Firebase Authentication**: For handling user authentication.
+- **React Router**: Provides seamless in-app navigation without page reloads.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
+Application Website: [Batting Cage Business Website](https://github.com/cmartinez131/batting-cage-business-website)

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Locations.css';
 import logo from '../assets/logo.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Map = ({ address, name }) => {
     const googleMapsSrc = `https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(address)}`;
@@ -19,10 +21,16 @@ const Map = ({ address, name }) => {
 };
 
 const Locations = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 500, //speed up or slow down animation
+        });
+    }, []);
+
     const locations = [
         {
             name: "Astoria, NY",
-            address: "32-87 Steinway St",
+            address: "32-87 Steinway St, Astoria, NY 11103",
             hours: [
                 "Mon - Thurs: 7 AM - 8 PM",
                 "Fri: 7 AM - 10 PM",
@@ -36,7 +44,7 @@ const Locations = () => {
         },
         {
             name: "Downtown Brooklyn, NY",
-            address: "622 Fulton, Brooklyn",
+            address: "622 Fulton St, Brooklyn, NY 11201",
             hours: [
                 "Mon - Thurs: 8 AM - 9 PM",
                 "Fri - Sat: 8 AM - 11 PM",
@@ -49,7 +57,7 @@ const Locations = () => {
         },
         {
             name: "Long Island, NY",
-            address: '40.778236,-73.777908',
+            address: '630 Old Country Rd, Garden City, NY 11530',
             coordinates: '40.778236,-73.777908',
             hours: [
                 "Mon - Fri: 8 AM - 10 PM",
@@ -71,7 +79,7 @@ const Locations = () => {
                 <h1 className="page-title">Locations</h1>
             </div>
             {locations.map((loc, index) => (
-                <div key={index}>
+                <div key={index} data-aos="fade-up" data-aos-delay={`${index * 100}`}>
                     <h2 className="locations-title">{loc.name}</h2>
                     <div className="locations-row">
                         <div className="locations-col">
@@ -79,7 +87,7 @@ const Locations = () => {
                         </div>
                         <div className="locations-col">
                             <div className="locations-details">
-                                <h3>{loc.name}</h3>
+                                <h3>Address</h3>
                                 <p>{loc.address}</p>
                                 <h3>Hours</h3>
                                 <ul>

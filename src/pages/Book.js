@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import './Book.css';
 
 const Book = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
-    const [dates, setDates] = useState([]);
     const [selectedTimes, setSelectedTimes] = useState(new Set());
     const pricePerSlot = 35; // price per 30-minute slot
 
@@ -13,7 +14,7 @@ const Book = () => {
         '10:00 AM': 0,
         '10:30 AM': 0,
         '11:00 AM': 2,
-        '12:30 AM': 1,
+        '12:30 PM': 1,
         '1:00 PM': 2,
         '1:30 PM': 3,
         '2:00 PM': 3,
@@ -34,26 +35,12 @@ const Book = () => {
         '9:30 PM': 2,
         '10:00 PM': 3,
         '10:30 PM': 3,
-        '11:00 PM': 3,
-
-        // add additional time slots
+        '11:00 PM': 3
     };
-
-    // populate the dates for the next two weeks
-    useEffect(() => {
-        let tempDates = [];
-        for (let i = 0; i < 14; i++) {
-            let newDate = new Date();
-            newDate.setDate(newDate.getDate() + i);
-            tempDates.push(newDate);
-        }
-        setDates(tempDates);
-    }, []);
 
     const toggleTimeSlot = (time) => {
         if (cagesAvailability[time] === 0) {
-            // if no cages are available, don't allow selection
-            return;
+            return; // if no cages are available, don't allow selection
         }
 
         const newTimes = new Set(selectedTimes);
@@ -63,10 +50,6 @@ const Book = () => {
             newTimes.add(time);
         }
         setSelectedTimes(newTimes);
-    };
-
-    const formatDate = (date) => {
-        return date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
     };
 
     const formatCageAvailability = (numCages) => {
@@ -88,7 +71,7 @@ const Book = () => {
             const endTime = getEndTime(time);
             return (
                 <div key={time} className="reservation-item">
-                    <span>{formatDate(selectedDate)}</span>
+                    <span>{selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</span>
                     <span>{`${time} - ${endTime}`}</span>
                     <span>${pricePerSlot.toFixed(2)}</span>
                 </div>
@@ -96,11 +79,10 @@ const Book = () => {
         });
     };
 
-    // helper function to get end time of a slot
     const getEndTime = (startTime) => {
         const [hours, minutesPart] = startTime.split(':');
         const minutes = minutesPart.substring(0, 2);
-        const ampm = minutesPart.substring(2);
+        const ampm = minutesPart.substring(3);
 
         let date = new Date(0, 0, 0, hours, minutes);
         date.setMinutes(date.getMinutes() + 30); // Add 30 minutes
@@ -109,7 +91,6 @@ const Book = () => {
         let newMinutes = date.getMinutes();
         let newAmpm = ampm;
         
-        // convert to 12-hour format
         if (newHours >= 12) {
             newHours -= 12;
             newAmpm = 'PM';
@@ -126,11 +107,11 @@ const Book = () => {
                 <h1>Book a Cage</h1>
             </div>
             <div className="date-picker">
-                {dates.map((date, index) => (
-                    <div key={index} className={`date ${date.toDateString() === selectedDate.toDateString() ? 'selected' : ''}`} onClick={() => setSelectedDate(date)}>
-                        {formatDate(date)}
-                    </div>
-                ))}
+                <DatePicker
+                    selected={selectedDate}
+                    onChange={date => setSelectedDate(date)}
+                    inline
+                />
             </div>
             <div className="time-slot-container">
                 {Object.entries(cagesAvailability).map(([time, numCages], index) => (

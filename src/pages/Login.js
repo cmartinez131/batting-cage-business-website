@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-import '../styles.css'; // Adjust the path as per your project structure
+import '../styles.css';
 
 const Login = () => {
-    const [errorMessage, setErrorMessage] = useState(''); // State to hold the error message
+    const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
     const logIn = async (e) => {
@@ -12,20 +12,31 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
+        await performLogin(email, password);
+    };
+
+    const performLogin = async (email, password) => {
         const auth = getAuth();
 
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            navigate('/account');
+            navigate('/book');
         } catch (error) {
-            setErrorMessage('Invalid email or password'); // Set the error message on failure
+            console.error("Login error:", error);
+            setErrorMessage('Invalid email or password');
         }
+    };
+
+    const loginDemoUser = async () => {
+        const demoEmail = 'demouser@example.com';
+        const demoPassword = 'demopassword';
+        await performLogin(demoEmail, demoPassword);
     };
 
     return (
         <div className="container center-content">
             <h1>Log In</h1>
-            <form className="row row-col form-background" onSubmit={logIn}> {/* Added form-background class */}
+            <form className="row row-col form-background" onSubmit={logIn}>
                 <div className="col">
                     <label>
                         Email:
@@ -40,10 +51,13 @@ const Login = () => {
                 </div>
                 <div className="col">
                     <button type="submit">Log In</button>
+                    <br />
+                    <br />
+                    <button type="button" onClick={loginDemoUser}>Demo User</button>
                 </div>
-                {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Conditionally render error message */}
+                {errorMessage && <div className="error-message">{errorMessage}</div>}
                 <div className="member-check">
-                    <a href="/signup">Not a member? Sign up now</a> {/* Adjusted the text and link */}
+                    <a href="/signup">Not a member? Sign up now</a>
                 </div>
             </form>
         </div>

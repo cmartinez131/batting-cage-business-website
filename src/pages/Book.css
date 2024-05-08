@@ -1,5 +1,5 @@
 .booking-container {
-    max-width: 600px;
+    max-width: 800px;
     margin: auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -102,4 +102,11 @@
 
 .checkout-button:hover {
     background-color: #3998D0;
+}
+
+.message {
+    color: black;
+    text-align: center;
+    font-size: large;
+    margin-top: 10px;
 }

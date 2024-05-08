@@ -2,44 +2,35 @@ import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Book.css';
+import { db } from '../firebase';
+import { doc, getDoc } from 'firebase/firestore';
+import { createBooking } from '../firebaseFunctions';
 
-const Book = () => {
+const Book = ({ user }) => {
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [selectedTimes, setSelectedTimes] = useState(new Set());
+    const [cagesAvailability, setCagesAvailability] = useState({});
     const pricePerSlot = 35; // price per 30-minute slot
+    const [message, setMessage] = useState('');
 
-    const cagesAvailability = {
-        '9:00 AM': 2,
-        '9:30 AM': 3,
-        '10:00 AM': 0,
-        '10:30 AM': 0,
-        '11:00 AM': 2,
-        '12:30 PM': 1,
-        '1:00 PM': 2,
-        '1:30 PM': 3,
-        '2:00 PM': 3,
-        '2:30 PM': 3,
-        '3:00 PM': 3,
-        '3:30 PM': 3,
-        '4:00 PM': 3,
-        '4:30 PM': 1,
-        '5:00 PM': 2,
-        '5:30 PM': 1,
-        '6:00 PM': 2,
-        '6:30 PM': 1,
-        '7:00 PM': 0,
-        '7:30 PM': 0,
-        '8:00 PM': 0,
-        '8:30 PM': 0,
-        '9:00 PM': 2,
-        '9:30 PM': 2,
-        '10:00 PM': 3,
-        '10:30 PM': 3,
-        '11:00 PM': 3
-    };
+    useEffect(() => {
+        const fetchCageAvailability = async () => {
+            const cageRef = doc(db, "Cages", "Cage1"); // Fetch details for 'Cage1'
+            const docSnap = await getDoc(cageRef);
 
-    const toggleTimeSlot = (time) => {
-        if (cagesAvailability[time] === 0) {
+            if (docSnap.exists()) {
+                setCagesAvailability(docSnap.data().timeSlots);
+            } else {
+                console.log("No such document!");
+                setCagesAvailability({});
+            }
+        };
+
+        fetchCageAvailability();
+    }, [selectedDate]);
+
+    const toggleTimeSlot = (time, available) => {
+        if (!available) {
             return; // if no cages are available, don't allow selection
         }
 
@@ -52,9 +43,19 @@ const Book = () => {
         setSelectedTimes(newTimes);
     };
 
-    const formatCageAvailability = (numCages) => {
-        if (numCages === 0) return 'Unavailable';
-        return `${numCages} cage${numCages > 1 ? 's' : ''} available`;
+    const timeToMinutes = (time) => {
+        const [hourMinute, period] = time.split(' ');
+        let [hours, minutes] = hourMinute.split(':').map(Number);
+
+        if (period === 'PM' && hours !== 12) hours += 12;
+        if (period === 'AM' && hours === 12) hours = 0;
+
+        return hours * 60 + minutes;
+    };
+
+    const formatCageAvailability = (available) => {
+        if (!available) return 'Unavailable';
+        return "Cage available";
     };
 
     const calculateTotalPrice = () => {
@@ -90,7 +91,7 @@ const Book = () => {
         let newHours = date.getHours();
         let newMinutes = date.getMinutes();
         let newAmpm = ampm;
-        
+
         if (newHours >= 12) {
             newHours -= 12;
             newAmpm = 'PM';
@@ -99,6 +100,27 @@ const Book = () => {
         if (newMinutes < 10) newMinutes = '0' + newMinutes; // adding leading zero
 
         return `${newHours}:${newMinutes} ${newAmpm}`;
+    };
+
+    const handleCheckout = async () => {
+        if (!user) {
+            setMessage('You must be logged in to book.');
+            return;
+        }
+        let successMessages = [];
+        for (let time of selectedTimes) {
+            if (cagesAvailability[time]) { // Assuming availability is a count
+                try {
+                    await createBooking(user.uid, "Cage1", selectedDate.toISOString().split('T')[0], time);
+                    successMessages.push(`Booking successful for ${time}`);
+                } catch (error) {
+                    console.error('Booking failed:', error);
+                    setMessage(`Booking failed for ${time}: ${error.message}`);
+                    return;
+                }
+            }
+        }
+        setMessage(successMessages.join(', ')); // Join all success messages into a single string
     };
 
     return (
@@ -114,11 +136,13 @@ const Book = () => {
                 />
             </div>
             <div className="time-slot-container">
-                {Object.entries(cagesAvailability).map(([time, numCages], index) => (
-                    <div key={index} className={`time-slot ${selectedTimes.has(time) ? 'selected' : ''} ${numCages === 0 ? 'unavailable' : ''}`} onClick={() => toggleTimeSlot(time)}>
-                        {time} - {formatCageAvailability(numCages)}
-                    </div>
-                ))}
+                {Object.entries(cagesAvailability)
+                    .sort((a, b) => timeToMinutes(a[0]) - timeToMinutes(b[0]))
+                    .map(([time, available], index) => (
+                        <div key={index} className={`time-slot ${selectedTimes.has(time) ? 'selected' : ''} ${!available ? 'unavailable' : ''}`} onClick={() => toggleTimeSlot(time, available)}>
+                            {time} - {formatCageAvailability(available)}
+                        </div>
+                    ))}
             </div>
             <div className="cart">
                 <h2>Your Reservation</h2>
@@ -129,7 +153,8 @@ const Book = () => {
                     <p>Total:</p>
                     <p>{calculateTotalHours()} hrs / ${calculateTotalPrice().toFixed(2)}</p>
                 </div>
-                <button className="checkout-button">Checkout</button>
+                <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
+                {message && <p className="message">{message}</p>}
             </div>
         </div>
     );

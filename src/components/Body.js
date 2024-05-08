@@ -28,7 +28,7 @@ const Body = ({ user }) => {
             <Route path="/pro-shop" element={<ProShop />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/memberships" element={<Memberships />} />
-            <Route path="/book" element={<Book />} />
+            <Route path="/book" element={<Book user={user} />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/features" element={<Features />} />

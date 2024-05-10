@@ -3,10 +3,12 @@ import { auth } from '../firebase';
 import '../styles.css';
 import './navbar.css';
 import logo from '../assets/logo.png';
-import { useState } from 'react'; // Import useState
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ user }) => {
     const [activeDropdown, setActiveDropdown] = useState(''); // New state variable to manage active dropdown
+    const navigate = useNavigate() // Use navigate with react-router to maintain page state
 
     const toggleDropdown = (dropdown) => {
         if (activeDropdown === dropdown) setActiveDropdown(''); // Close if already open
@@ -15,7 +17,8 @@ const Navbar = ({ user }) => {
 
     const handleLogout = () => {
         auth.signOut().then(() => {
-            window.location.href = '/login'; // redirect to login page after logout
+            navigate('/login'); // Redirect to login page after logout
+            window.scrollTo(0, 0); // Scroll to the top on log out
         }).catch((error) => {
 
         });
@@ -28,7 +31,7 @@ const Navbar = ({ user }) => {
     return (
         <nav className="nav">
             <div className="title-and-logo-container">
-                <Link className='title' to="/">
+                <Link className='title' to="/" onClick={handleNavLinkClick}>
                     <img src={logo} alt="Batting Blvd Logo" className="logo" />
                     <span>Batting Blvd</span>
                 </Link>
@@ -93,14 +96,14 @@ const Navbar = ({ user }) => {
 
             <div className="action-buttons-container">
                 <div className="bookingButton">
-                    <Link className="button" to="/book">Book a Cage</Link>
+                    <Link className="button" to="/book" onClick={handleNavLinkClick}>Book a Cage</Link>
                 </div>
 
                 {/* Account/Login Button */}
                 <div className='accountButton'>
                     {user ? (
                         <>
-                            <Link className="button" to="/account">Account</Link>
+                            <Link className="button" to="/account" onClick={handleNavLinkClick}>Account</Link>
                             <button className="button" onClick={handleLogout}>Logout</button>
                         </>
                     ) : (

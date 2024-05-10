@@ -3,7 +3,7 @@ import './home.css';
 import homepage1 from '../assets/homepage1.png';
 import homepage2 from '../assets/homepage2.png';
 import homepage3 from '../assets/homepage3.png';
-import homepage4 from '../assets/homepage4.png';
+// import homepage4 from '../assets/homepage4.png';
 import battingVideo1 from '../assets/battingvideo1.mp4';
 import battingVideo2 from '../assets/battingvideo2.mp4';
 import { useNavigate } from 'react-router-dom';
@@ -25,8 +25,8 @@ const Home = () => {
     const navigate = useNavigate();
 
     const handleReserveClick = () => {
+        // scroll to the top of the page when navigating
         navigate('/book');
-        // scroll to the top of the page when navigating. need to use this in other places
         window.scrollTo(0, 0);
     };
 

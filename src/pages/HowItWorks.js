@@ -8,7 +8,9 @@ const HowItWorks = () => {
 
     const handleLetsPlayClick = () => {
         navigate('/book'); // Use navigate to change the page
+        window.scrollTo(0.0); // Scroll to the top of the new page
     }
+
 
     return (
         <div className="how-it-works-container">

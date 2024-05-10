@@ -21,10 +21,16 @@ const Login = () => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             navigate('/book');
+            window.scrollTo(0, 0);
         } catch (error) {
             console.error("Login error:", error);
             setErrorMessage('Invalid email or password');
         }
+    };
+
+    const handleSignupRedirect = () => {
+        navigate('/signup');
+        window.scrollTo(0, 0);
     };
 
     const loginDemoUser = async () => {
@@ -57,7 +63,7 @@ const Login = () => {
                 </div>
                 {errorMessage && <div className="error-message">{errorMessage}</div>}
                 <div className="member-check">
-                    <a href="/signup">Not a member? Sign up now</a>
+                    <button onClick={handleSignupRedirect}>Not a member? Sign up now</button>
                 </div>
             </form>
         </div>

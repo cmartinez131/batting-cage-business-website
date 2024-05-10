@@ -1,43 +1,50 @@
-import { useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom'
-import { useEffect } from "react";
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
-import Body from './components/Body'
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import Body from './components/Body';
 
 const App = () => {
-
-  // Initial user state is null meaning no user is logged in
   const [user, setUser] = useState(null);
 
-  // Helper function to adjust body component padding for dynamic navbar sizing
-  const adjustBodyPadding = () => {
-    const navbar = document.querySelector('.nav'); // Adjust the selector as needed
-    const navbarHeight = navbar.offsetHeight;
-    document.body.style.paddingTop = `${navbarHeight}px`;
-  };
+  useEffect(() => {
+    // Listener for user authentication status changes
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser ? currentUser : null);
+    });
+
+    // Cleanup on component unmount
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
-    // Set up a listener for changes in user authentication status
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-      } else {
-        setUser(null);
+    const navbar = document.querySelector('.nav');
+    const adjustBodyPadding = () => {
+      const navbarHeight = navbar.offsetHeight;
+      document.body.style.paddingTop = `${navbarHeight}px`;
+    };
+
+    // Create a ResizeObserver to observe changes in navbar size
+    const resizeObserver = new ResizeObserver(entries => {
+      for (let entry of entries) {
+        adjustBodyPadding();
       }
     });
 
-    // Adjust the boddy padding on mount and on window resize
+    // Start observing the navbar
+    resizeObserver.observe(navbar);
+
+    // Ensure padding is adjusted on initial mount and window resize as well
     adjustBodyPadding();
     window.addEventListener('resize', adjustBodyPadding);
 
-    // Cleanup function for both the auth listener and resize event listener
+    // Cleanup function for resize observer and event listener
     return () => {
-      unsubscribe();
+      resizeObserver.disconnect();
       window.removeEventListener('resize', adjustBodyPadding);
-    }
+    };
   }, []);
 
   return (
@@ -48,8 +55,7 @@ const App = () => {
         <Footer />
       </Router>
     </>
-
-  )
+  );
 }
 
 export default App;

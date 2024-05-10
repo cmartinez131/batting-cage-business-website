@@ -1,15 +1,14 @@
 body {
     background-color: lightblue;
     font-family: sans-serif;
-    padding-top: 80px; /* Adjust this value based on the actual height of your navbar */
-
 }
 
-html, body {
-    height: 100%;
+html,
+body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 img {
@@ -27,14 +26,12 @@ img {
     height: auto;
 }
 
-/* styling for responsive page layout */
-
 .container {
     width: 100%;
     margin: 0px;
     padding: 0px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -66,13 +63,11 @@ img {
     flex-direction: column;
 }
 
-/* center content in a image containers - used in cover images */
 .center-content {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 .new-nav {
     background-color: white;
@@ -85,13 +80,14 @@ img {
 }
 
 .form-background {
-    background-color: #003366;  /* Dark background */
+    background-color: #003366;
     padding: 20px;
-    border-radius: 8px;  /* Rounded corners */
-    color: white;  /* White text */
+    border-radius: 8px;
+    color: white;
 }
 
-.form-background label, .form-background input {
+.form-background label,
+.form-background input {
     color: white;
 }
 
@@ -102,4 +98,3 @@ img {
     border-radius: 4px;
     padding: 5px;
 }
-

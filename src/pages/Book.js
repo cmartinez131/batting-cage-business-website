@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Book.css';
+import Modal from '../components/Model'
 import { db } from '../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { createBooking } from '../firebaseFunctions';
@@ -10,8 +11,9 @@ const Book = ({ user }) => {
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [selectedTimes, setSelectedTimes] = useState(new Set());
     const [cagesAvailability, setCagesAvailability] = useState({});
-    const pricePerSlot = 35; // price per 30-minute slot
     const [message, setMessage] = useState('');
+    const [isModalOpen, setModalOpen] = useState(false);
+    const pricePerSlot = 35; // price per 30-minute slot
 
     useEffect(() => {
         const fetchCageAvailability = async () => {
@@ -105,59 +107,88 @@ const Book = ({ user }) => {
     const handleCheckout = async () => {
         if (!user) {
             setMessage('You must be logged in to book.');
+            setModalOpen(true);
             return;
         }
+
+        if (selectedTimes.size === 0) {
+            setMessage("Please click a reservation time.");
+            setModalOpen(true);
+            return;
+        }
+
         let successMessages = [];
         for (let time of selectedTimes) {
-            if (cagesAvailability[time]) { // Assuming availability is a count
+            if (cagesAvailability[time]) {
                 try {
                     await createBooking(user.uid, "Cage1", selectedDate.toISOString().split('T')[0], time);
                     successMessages.push(`Booking successful for ${time}`);
                 } catch (error) {
                     console.error('Booking failed:', error);
                     setMessage(`Booking failed for ${time}: ${error.message}`);
+                    setModalOpen(true);
                     return;
                 }
             }
         }
-        setMessage(successMessages.join(', ')); // Join all success messages into a single string
+        setSelectedTimes(new Set()); // Clear the selected times after successful booking
+        setMessage(successMessages.join(', '));
+        setModalOpen(true);
     };
+
+    const closeModal = () => {
+        if (selectedTimes.size === 0) {
+            setMessage("Please click a reservation time.");
+        } else {
+            setMessage(''); // Clear message when there are items in the cart
+        }
+        setModalOpen(false);
+    };
+
 
     return (
         <div className="booking-container">
             <div className="booking-title-container">
                 <h1>Book a Cage</h1>
             </div>
-            <div className="date-picker">
-                <DatePicker
-                    selected={selectedDate}
-                    onChange={date => setSelectedDate(date)}
-                    inline
-                />
-            </div>
-            <div className="time-slot-container">
-                {Object.entries(cagesAvailability)
-                    .sort((a, b) => timeToMinutes(a[0]) - timeToMinutes(b[0]))
-                    .map(([time, available], index) => (
-                        <div key={index} className={`time-slot ${selectedTimes.has(time) ? 'selected' : ''} ${!available ? 'unavailable' : ''}`} onClick={() => toggleTimeSlot(time, available)}>
-                            {time} - {formatCageAvailability(available)}
-                        </div>
-                    ))}
-            </div>
-            <div className="cart">
-                <h2>Your Reservation</h2>
-                <div className="reservation-list">
-                    {selectedTimes.size > 0 ? renderReservationList() : <p className="reservation-item">No time slots selected.</p>}
+            <div className="main-content">
+                <div className="calendar-container">
+                    <DatePicker
+                        selected={selectedDate}
+                        onChange={date => setSelectedDate(date)}
+                        inline
+                    />
                 </div>
-                <div className="total-price">
-                    <p>Total:</p>
-                    <p>{calculateTotalHours()} hrs / ${calculateTotalPrice().toFixed(2)}</p>
+                <div className="time-slots-container">
+                    {Object.entries(cagesAvailability)
+                        .sort((a, b) => timeToMinutes(a[0]) - timeToMinutes(b[0]))
+                        .map(([time, available], index) => (
+                            <div key={index} className={`time-slot ${selectedTimes.has(time) ? 'selected' : ''} ${!available ? 'unavailable' : ''}`} onClick={() => toggleTimeSlot(time, available)}>
+                                {time} - {formatCageAvailability(available)}
+                            </div>
+                        ))}
                 </div>
-                <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
-                {message && <p className="message">{message}</p>}
             </div>
+            <div className="cart-container">
+                <div className="cart">
+                    <h2>Your Reservation</h2>
+                    <div className="reservation-list">
+                        {selectedTimes.size > 0 ? renderReservationList() : <p className="reservation-item">No time slots selected.</p>}
+                    </div>
+                    <div className="total-price">
+                        <p>Total:</p>
+                        <p>{calculateTotalHours()} hrs / ${calculateTotalPrice().toFixed(2)}</p>
+                    </div>
+                    <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
+                    {message && <p className="message">{message}</p>}
+                </div>
+            </div>
+            <Modal isOpen={isModalOpen} close={closeModal}>
+                <p>{message}</p>
+            </Modal>
         </div>
     );
+
 };
 
 export default Book;

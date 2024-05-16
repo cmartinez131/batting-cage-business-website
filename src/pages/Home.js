@@ -71,7 +71,7 @@ const Home = () => {
 
             <div className="home-tutorial-container" data-aos="fade-up">
                 <div className='reserve-button-container'>
-                    <h2 className="tutorial-title">How it works</h2>
+                    <h2 className="tutorial-title">How it works:</h2>
                     <p className="tutorial-subtitle">Find a Cage near you, reserve a cage, bring your own equipment or use ours, and play! All cages are contactless check-in.</p>
                     <button className="tutorial-button" onClick={handleReserveClick}>Lets play!</button>
                 </div>

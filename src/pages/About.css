@@ -1,26 +1,89 @@
-.about-content {
+.about-mission-container {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cover-container {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.cover-text {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+}
+
+.about-mission-content {
     background-color: white;
     padding: 20px;
     margin: 20px auto;
-    max-width: 800px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    font-family: 'Trebuchet MS', sans-serif;
+    width: 80%;
 }
 
-.about-content p {
-    color: #333333;
+.about-mission-content h2 {
+    color: #003366;
+    margin-bottom: 20px;
+    font-size: 2.6em;
+    font-weight: bold;
+}
+
+.about-mission-content p {
+    color: #333;
     line-height: 1.6;
     margin-bottom: 20px;
     text-align: justify;
+    font-size: 1.2em;
 }
 
+.about-heading {
+    font-size: 2.5em;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+
+
+
 @media (max-width: 600px) {
-    .about-content {
+    .about-mission-content {
         padding: 10px;
         margin: 10px;
     }
-    .about-content h2 {
-        font-size: 2rem;
+
+    .about-mission-content h2 {
+        font-size: 1.8em;
+        /* Smaller font size for headings on small screens */
+    }
+
+    .about-mission-content p {
+        font-size: 1em;
+    }
+
+    .cover-text {
+        font-size: 1.5rem;
+    }
+
+    .about-heading {
+        font-size: 1.8em;
     }
 }

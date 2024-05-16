@@ -1,28 +1,29 @@
-
 .how-it-works-container {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-bottom: 2rem;
-    /* background-color: #e67350; */
+    background-color: white;
 }
 
 .header-section {
     background-size: cover;
-    padding: 50px 0;
+    padding: 70px 0;
 }
 
 .cover-title {
     color: white;
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .steps-header {
     text-align: center;
     margin: 2rem 0;
-    font-size: 1.75rem;
-    color: #000; /* Choose a color that fits your design */
+    font-size: 2.4em;
+    color: #003366;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .steps-section {
@@ -32,16 +33,16 @@
 }
 
 .step {
-    width: 20%;
+    width: 22%;
     margin: 0 20px;
-    padding: 20px;
-    background-color: #f8f9fa;
+    padding: 25px;
+    background-color: #f0f0f0;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .number-circle {
-    background-color: #FF337A; /* Dark pink circle */
+    background-color: #003366;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -54,14 +55,21 @@
 }
 
 .step-title {
-    color: #212529;
-    font-size: 2rem;
+    color: #003366;
+    font-size: 2.1em;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
 .step-description {
-    color: #6c757d;
-    font-size: 1.25rem;
+    color: #333;
+    font-size: 1.4em;
+}
+
+.step-image {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 15px;
 }
 
 .cta-section {
@@ -69,9 +77,9 @@
 }
 
 .cta-button {
-    padding: 15px 30px;
-    font-size: 1.5rem;
-    background-color: #FF337A;
+    padding: 20px 40px;
+    font-size: 1.75rem;
+    background-color: #003366;
     color: white;
     border: none;
     border-radius: 25px;
@@ -80,37 +88,20 @@
 }
 
 .cta-button:hover {
-    background-color: #e67350;
-}
-
-.step-action-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #007bff; /* Bootstrap primary blue */
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.step-action-button:hover {
-    background-color: #0056b3; /* A darker shade of blue for hover state */
+    background-color: #002244;
 }
 
 @media (max-width: 768px) {
     .steps-section {
         flex-direction: column;
     }
-    
+
     .step {
         width: 80%;
         margin: 20px auto;
     }
-    
+
     .cover-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 }

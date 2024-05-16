@@ -47,12 +47,9 @@ const Navbar = ({ user }) => {
                         <Link className='navLink' to="/how-it-works" onClick={handleNavLinkClick}>How It Works</Link>
                         <Link className='navLink' to="/locations" onClick={handleNavLinkClick}>Locations</Link>
                         <Link className='navLink' to="/faq" onClick={handleNavLinkClick}>FAQs</Link>
-                        {/* need to add a route and page for faqs. use pingpod for inspiration */}
-
                     </div>
                 </div>
 
-                {/* Similar modifications for other dropdowns */}
                 <div className={`dropdown ${activeDropdown === 'adults' ? 'active' : ''}`}>
                     <button className="dropbtn" onClick={() => toggleDropdown('adults')}>Programs</button>
                     <div className="dropdown-content">
@@ -78,8 +75,7 @@ const Navbar = ({ user }) => {
                 <div className={`dropdown ${activeDropdown === 'about' ? 'active' : ''}`}>
                     <button className="dropbtn" onClick={() => toggleDropdown('about')}>About</button>
                     <div className="dropdown-content">
-                        <Link className='navLink' to="/about" onClick={handleNavLinkClick}>About</Link>
-                        <Link className='navLink' to="/mission" onClick={handleNavLinkClick}>Our Mission</Link>
+                        <Link className='navLink' to="/about" onClick={handleNavLinkClick}>About Us</Link>
                         <Link className='navLink' to="/faq" onClick={handleNavLinkClick}>FAQs</Link>
                         <Link className='navLink' to="/blog" onClick={handleNavLinkClick}>Blog</Link>
                     </div>

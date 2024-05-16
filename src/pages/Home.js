@@ -43,7 +43,7 @@ const Home = () => {
                     <button className="make-reservation-button" onClick={handleReserveClick}>RESERVE A CAGE NOW</button>
                 </div>
                 <div className="hero-image-container">
-                    <img src={heroImage} alt="Batting Cage" data-aos="zoom-in"/>
+                    <img src={heroImage} alt="Batting Cage" data-aos="fade-left"/>
                 </div>
             </div>
 
@@ -62,6 +62,7 @@ const Home = () => {
 
             <div className="home-learn-more-container" data-aos="fade-up">
                 <div className='learn-more-text'>
+                    <h2 className="hook-title">Anyone can play</h2>
                     <p>Whether you're a rookie or a pro, a fun experience awaits you at Batting Blvd. Book cages, take lessons, host a team event, join a league, and more.</p>
                     <p>Reserve a batting cage for as low as $30/hr.</p>
                     <button className="home-learn-more-button" onClick={handleLearnMoreClick}>LEARN MORE</button>

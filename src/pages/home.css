@@ -1,8 +1,7 @@
-
 .home {
     background-color: white;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -120,8 +119,6 @@
     padding-bottom: 30px;
 }
 
-
-
 .left-text {
     margin-left: 1rem;
     margin-right: 2%;
@@ -144,7 +141,7 @@
 }
 
 .home-container-6 img {
-    width: 40%;   /* adjust this as per your needs */
+    width: 40%;
     height: auto;
     object-fit: cover;
     margin-right: 2%;
@@ -152,7 +149,7 @@
 }
 
 .home-container-6 div {
-    width: 40%;   /* adjust this as per your needs */
+    width: 40%;
     padding: 2rem;
     background-color: #87CEEB;
     border-radius: 25px;
@@ -176,12 +173,11 @@
     object-fit: cover;
 }
 
-
-.hero-container{
+.hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #000; 
+    background-color: #000;
     height: 550px;
     position: relative;
 }
@@ -197,10 +193,8 @@
 }
 
 .hero-title {
-    color: white; /* Change the text color as needed */
-    font-size: 4.0rem; /* Adjust font size as needed */
-    /* font-weight: bold; */
-    /* margin-bottom: 50px; */
+    color: white;
+    font-size: 4.0rem;
 }
 
 .make-reservation-button {
@@ -210,14 +204,15 @@
     font-size: 1.5rem;
     border: none;
     padding: 20px 40px;
+    margin-bottom: 30px;
     cursor: pointer;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease; /* For a hover effect */
+    transition: background-color 0.3s ease;
 }
 
 .make-reservation-button:hover {
-    background-color: #e69500; 
+    background-color: #e69500;
 }
 
 .hero-image-container {
@@ -233,7 +228,7 @@
 .hero-image-container img {
     width: auto;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 .home-hook-container {
@@ -243,26 +238,21 @@
     height: 550px;
     position: relative;
     background-color: #f0f0f0;
-    
 }
 
 .hook-text-container {
     width: 45%;
-    padding-left: 2%; /* Adjust padding as needed */
+    padding-left: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    /* New styles for the text container */
-    
-    padding: 3rem; /* Padding inside the box */
-    margin: 1rem; /* Margin around the box for separation from other elements */
-    text-align: center; /* Center the text inside the box */
-    
+    padding: 3rem;
+    margin: 1rem;
+    text-align: center;
 }
 
 .hook-title {
-    color: #333;
+    color: #003366;
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
@@ -286,7 +276,7 @@
 .hook-video-container video {
     width: auto;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the area without distortion */
+    object-fit: cover;
 }
 
 .home-tutorial-container {
@@ -299,19 +289,19 @@
 }
 
 .tutorial-title {
-    color: #333;
+    color: #003366;
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
 .tutorial-subtitle {
-    color: #666; /* Medium-dark color for subtitle */
-    font-size: 1.5rem; /* Readable font size for the subtitle */
+    color: #666;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
 }
 
 .tutorial-button {
-    background-color: orange; /* Coral color for the button */
+    background-color: orange;
     color: white;
     font-size: 1.25rem;
     border: none;
@@ -326,18 +316,18 @@
 .home-learn-more-container {
     display: flex;
     justify-content: center;
-    align-items: center; /* Center align the content vertically and horizontally */
-    background-color: #f0f0f0; /* A slightly off-white background for contrast */
+    align-items: center;
+    background-color: #f0f0f0;
     padding: 3rem;
-    margin: 2rem 0; /* Add some top and bottom margin for separation */
+    margin: 2rem 0;
 }
 
 .learn-more-text {
-    font-size: 1.5rem; /* Adjust font size as needed */
-    color: #333; /* Darker text color for better readability */
-    max-width: 700px; /* Set a max-width for the text for optimal line length */
-    text-align: center; /* Center the text */
-    padding: 1rem; /* Padding around the text for spacing */
+    font-size: 1.5rem;
+    color: #333;
+    max-width: 700px;
+    text-align: center;
+    padding: 1rem;
 }
 
 .home-learn-more-button {
@@ -350,10 +340,102 @@
     border-radius: 5px;
     text-transform: uppercase;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-top: 20px; /* Space above the button */
+    margin-top: 20px;
     transition: background-color 0.3s ease;
 }
 
 .home-learn-more-button:hover {
-    background-color: #e67350; /* Slightly darker coral on hover */
+    background-color: #e67350;
+}
+
+.home-container-5 h3 {
+    color: #003366;
+}
+
+/* Media query to hide the hero image on small screens */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hero-text-container {
+        width: 90%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .make-reservation-button {
+        width: auto;
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+
+    .hero-image-container {
+        display: none;
+    }
+
+    .home-hook-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hook-text-container {
+        width: 90%;
+        margin-top: -10px;
+    }
+
+    .hook-video-container {
+        width: 100%;
+        height: 300px;
+    }
+
+    .home-learn-more-container {
+        padding: 2rem;
+        margin: 1rem 0;
+    }
+
+    .home-tutorial-container {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .home-tutorial-container .reserve-button-container,
+    .home-tutorial-container .video-placeholder {
+        width: 100%;
+    }
+
+    .home-image-container {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .content-image {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .home-container-5 {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        padding-top: 8rem;
+        margin-bottom: 8rem;
+    }
+
+    .home-container-5 h3 {
+        font-size: 1.5rem;
+    }
+
+    .left-text,
+    .right-text {
+        width: 90%;
+        margin: 10px 0;
+    }
 }

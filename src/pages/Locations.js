@@ -23,7 +23,7 @@ const Map = ({ address, name }) => {
 const Locations = () => {
     useEffect(() => {
         AOS.init({
-            duration: 500, //speed up or slow down animation
+            duration: 500,
         });
     }, []);
 

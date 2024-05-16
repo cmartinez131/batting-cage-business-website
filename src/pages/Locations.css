@@ -1,9 +1,8 @@
 .locations-container {
-    max-width: 1200px;
     margin: auto;
     padding: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
+    background-color: white;
 }
 
 .logo-and-title-container {
@@ -22,9 +21,10 @@
 .page-title {
     text-align: center;
     margin: 0;
-    font-size: 3.5rem;
-    color: black;
+    font-size: 2.8em;
+    color: #003366;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .locations-row {
@@ -34,10 +34,11 @@
 
 .locations-col {
     flex: 1;
-    padding: 10px;
+    padding: 20px;
     margin: 10px;
-    background: #f7f7f7;
+    background-color: #f0f0f0;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .locations-details {
@@ -45,29 +46,15 @@
 }
 
 .locations-details h3 {
-    font-size: 1.3rem;
-}
-
-.locations-details h2 {
-    color: #333;
-    margin: 0.5em 0 0.2em;
-}
-
-.locations-details ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.locations-details li {
-    padding: 0.25em 0;
+    font-size: 1.4rem;
+    color: #003366;
 }
 
 .locations-details p,
 .locations-details li {
-    color: #666;
+    color: #333;
     line-height: 1.6;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .locations-details .contact-info {
@@ -77,16 +64,14 @@
 .locations-col iframe {
     max-width: 100%;
     height: 100%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-
 }
 
 .locations-title {
     text-align: center;
     margin: 1rem 0;
-    font-size: 2.5rem;
-    color: black;
+    font-size: 2.1em;
+    color: #003366;
     font-weight: bold;
 }
 

@@ -5,10 +5,9 @@
 .footer-sections {
     width: 100%;
     padding: 2rem 0;
-    background-color: #f8f8f8;
+    background-color: black;
     color: white;
     font-size: 14px;
-    background-color: black;
 }
 
 .footer-columns {
@@ -52,7 +51,6 @@
 
 .page-link {
     color: orange;
-    /* color: #00D1FF; */
     font-weight: bold;
     text-decoration: none;
 }
@@ -73,7 +71,6 @@
 .third-column p,
 .third-column li {
     color: orange;
-    /* color: #00D1FF; */
 }
 
 .third-column ul {
@@ -119,7 +116,73 @@ hr {
     margin: .4rem;
 }
 
-#footer-sections {
-    flex-shrink: 0;
-    background-color: antiquewhite;
+.newsletter-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.newsletter-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-container p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    width: 300px;
+    max-width: 100%;
+}
+
+.newsletter-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: orange;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-button:hover {
+    background-color: #e67350;
+}
+
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .first-column,
+    .second-column,
+    .third-column,
+    .fourth-column {
+        flex: 1 0 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
+    }
+
+    .footer-logo,
+    .app-store-button {
+        margin: 1rem auto;
+    }
+
+    .social-media-button {
+        margin: 0.2rem;
+    }
 }

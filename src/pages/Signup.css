@@ -8,31 +8,11 @@
     background-color: whitesmoke;
 }
 
-.signup-center-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.signup-form-container {
+.signup-form {
     background-color: #003366;
     padding: 20px;
     border-radius: 8px;
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.signup-title {
-    color: white;
-    margin-bottom: 20px;
-    font-size: 2.5rem;
-}
-
-.signup-form {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,9 +68,17 @@
     margin-top: 20px;
 }
 
-.signup-link {
-    color: orange;
-    text-decoration: underline;
+.signup-center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.signup-title {
+    color: #003366;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
 }
 
 .signup-terms-privacy-links {

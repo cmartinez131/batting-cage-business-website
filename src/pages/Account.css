@@ -1,0 +1,129 @@
+.account-container {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: whitesmoke;
+}
+
+.account-info {
+    background-color: #003366;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.account-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.account-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.account-links {
+    margin-top: 2rem;
+}
+
+.account-section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: orange;
+}
+
+.account-link {
+    color: orange;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.account-link:hover {
+    text-decoration: underline;
+}
+
+.account-edit {
+    background-color: #003366;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    width: 80%;
+    max-width: 800px;
+    text-align: left;
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.account-form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.account-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.account-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #0070a3;
+    border-radius: 4px;
+    background-color: #004680;
+    color: white;
+}
+
+.account-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: orange;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+.account-button:hover {
+    background-color: #e67350;
+}
+
+@media (max-width: 768px) {
+
+    .account-info,
+    .account-edit {
+        width: 90%;
+    }
+
+    .account-title {
+        font-size: 2rem;
+    }
+
+    .account-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .account-section-title {
+        font-size: 1.5rem;
+    }
+
+    .account-label,
+    .account-input,
+    .account-button {
+        font-size: 1rem;
+    }
+}

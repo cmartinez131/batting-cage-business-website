@@ -19,6 +19,9 @@ This repository hosts code for a Batting Cage Booking Website, designed to strea
 - **Firebase**:
   - **Firestore**: To store and retrieve user data and booking information in real-time.
   - **Firebase Authentication**: For handling user authentication.
+  - **Firebase Hosting**: For deployment.
 - **React Router**: Provides seamless in-app navigation without page reloads.
 
-Application Website: [Batting Cage Business Website](https://github.com/cmartinez131/batting-cage-business-website)
+
+Application Website: [Batting Cage Business Website](https://batting-cage-app.web.app/)
+

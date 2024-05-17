@@ -23,13 +23,13 @@ const Account = () => {
                         <p><strong>User ID:</strong> {user.uid}</p>
                     </>
                 )}
-                <div className="account-links">
+                <div className="account-navigation">
                     <h3 className="account-section-title">Navigation</h3>
-                    <ul>
-                        <li><Link className="account-link" to="/book">Book a Cage</Link></li>
-                        <li><Link className="account-link" to="/">Purchase History</Link></li>
-                        <li><Link className="account-link" to="/">Help Center</Link></li>
-                    </ul>
+                    <div className="account-links">
+                        <Link className="account-link" to="/book">Book a Cage</Link>
+                        <Link className="account-link" to="/">Purchase History</Link>
+                        <Link className="account-link" to="/">Help Center</Link>
+                    </div>
                 </div>
             </div>
             <div className="account-edit">

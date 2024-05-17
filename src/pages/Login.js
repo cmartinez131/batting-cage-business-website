@@ -63,7 +63,7 @@ const Login = () => {
                     </div>
                     {errorMessage && <div className="login-error-message">{errorMessage}</div>}
                     <div className="login-member-check">
-                        <button type="button" onClick={handleSignupRedirect} className="login-button">Not a member? Sign up now</button>
+                        <button type="button" onClick={handleSignupRedirect} className="login-link-button">Not a member? Sign up now</button>
                     </div>
                 </form>
             </div>

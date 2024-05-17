@@ -6,96 +6,20 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
-.blog-title {
-    color: black;
-    text-align: center;
-    padding: 20px;
-}
-
-.blogpost {
-    background-color: white;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.blogpost-title {
-    color: darkblue;
-    padding: 10px 0;
-}
-
-.blogpost-content {
-    color: slategray;
-    line-height: 1.6;
-}
-
-.blogpost-date {
-    color: #888888;
-    font-size: 0.8em;
-    margin-top: 10px;
-}
-
-.blogpost-tag {
-    display: inline-block;
-    background-color: #1e90ff;
-    color: white;
-    padding: 5px 10px;
-    margin: 5px 5px 5px 0;
-    border-radius: 3px;
-    font-size: 0.8em;
-}
-
-.blogpost-tags {
-    margin-top: 10px;
-}
-
-.tags-label {
-    color: black;
-    margin-bottom: 5px;
-}
-
-.blog-filters {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
-
-.blog-filters button {
-    background-color: #1e90ff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.blog-filters button:hover {
-    background-color: #187bcd;
-}
-
-.blog-filters button:active {
-    background-color: #105e91;
-}
-
-/* mision page styles */
+/* Mission page styles */
 
 .mission-text {
     background-image: url('https://www.heatpressnation.com/cdn/shop/products/unisub-sublimation-blank-homeplate-plaque-10-x-10-4-pack.jpg?v=1600985064');
     background-size: cover;
     background-position: center;
-    padding: 20px; /* Add padding to create some space around the text */
-    color: black; /* Set the text color if needed */
+    padding: 20px; 
+    color: black;
 }
 
 .home-plate-img {
     width: 100%;
     height: auto;
-    /* This ensures that the aspect ratio of the image is maintained as it scales up to fill the container */
+   
 }
 
 .cover-container {
@@ -110,8 +34,8 @@
     top: 40%;
     left: 60%;
     transform: translate(-50%, -50%);
-    font-size: 86px; /* adjust the size as needed */
-    font-weight: bold; /* optional, for bold text */
+    font-size: 86px;
+    font-weight: bold;
 }
 
 .error-message {
@@ -119,28 +43,28 @@
     background-color: #FFC0CB;
     padding: 10px;
     margin: 10px;
-    text-align: center; /* Center the text horizontally */
-    width: fit-content; /* Make the width fit the content */
-    margin-left: auto; /* Center the block horizontally */
-    margin-right: auto; /* Center the block horizontally */
-    border-radius: 5px; /* Optional: for rounded corners */
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
 }
 
 .terms-privacy-links {
-    color: #007bff; /* You can choose any color */
-    text-decoration: underline; /* Underline the links */
-    cursor: pointer; /* Change cursor to pointer when hovering over the links */
+    color: #007bff;
+    text-decoration: underline; 
+    cursor: pointer;
 }
 
 .member-check {
-    text-align: center; /* Center the text horizontally */
+    text-align: center;
 }
 
 .member-check a {
-    color: #1e90ff; /* Set the text color to #1e90ff */
-    text-decoration: none; /* Remove underline from the link */
-    padding: 2px; /* Add a little padding around the link text */
-    border-radius: 3px; /* Optional: for rounded corners */
+    color: #1e90ff;
+    text-decoration: none;
+    padding: 2px;
+    border-radius: 3px;
 }
 
 .member-check a:hover {

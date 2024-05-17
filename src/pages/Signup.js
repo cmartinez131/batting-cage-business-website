@@ -43,6 +43,11 @@ const Signup = () => {
         }
     };
 
+    const handleLoginRedirect = () => {
+        navigate('/login');
+        window.scrollTo(0, 0);
+    };
+
     return (
         <div className="signup-container signup-center-content">
             <div className="signup-form-container">
@@ -62,12 +67,12 @@ const Signup = () => {
                     </div>
                     <div className="signup-form-group">
                         <label className="signup-label">
-                            <input 
-                                type="checkbox" 
+                            <input
+                                type="checkbox"
                                 onChange={() => setHasAgreed(!hasAgreed)} // Toggle the checkbox state
-                                required 
+                                required
                             />
-                            I have read and agree to the <a href="/terms" className="signup-terms-privacy-links">Terms of Service</a> and <a href="/privacy" className="signup-terms-privacy-links">Privacy Policy</a>
+                            I have read and agree to the <a href="/" className="signup-terms-privacy-links">Terms of Service</a> and <a href="/" className="signup-terms-privacy-links">Privacy Policy</a>
                         </label>
                     </div>
                     <div className="signup-form-group">
@@ -75,7 +80,7 @@ const Signup = () => {
                     </div>
                     {errorMessage && <div className="signup-error-message">{errorMessage}</div>}
                     <div className="signup-member-check">
-                        <a href="/login" className="signup-link">Already a member? Sign in now</a>
+                        <button type="button" onClick={handleLoginRedirect} className="signup-link-button">Already a member? Sign in now</button>
                     </div>
                 </form>
             </div>

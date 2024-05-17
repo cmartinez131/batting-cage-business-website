@@ -1,0 +1,90 @@
+.blog-container {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+.blog-title {
+    color: #003366;
+    text-align: center;
+    padding: 20px;
+}
+
+.blog-post {
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post-title {
+    color: #003366;
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+.blog-post-title:hover {
+    text-decoration: underline;
+}
+
+.blog-post-content p {
+    color: #333333;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.blog-post-date {
+    color: #888888;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.blog-post-tag {
+    display: inline-block;
+    background-color: #1e90ff;
+    color: white;
+    padding: 7px 12px;
+    margin: 5px 5px 5px 0;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+.blog-post-tags {
+    margin-top: 10px;
+}
+
+.blog-tags-label {
+    color: black;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.blog-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.blog-filters button {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1.1rem;
+}
+
+.blog-filters button:hover {
+    background-color: #187bcd;
+    transform: translateY(-2px);
+}
+
+.blog-filters button:active {
+    background-color: #105e91;
+    transform: translateY(0);
+}

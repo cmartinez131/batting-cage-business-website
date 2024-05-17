@@ -88,6 +88,15 @@
     margin-top: 20px;
 }
 
+.login-link-button {
+    color: orange;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
 @media (max-width: 768px) {
     .login-form-group {
         width: 90%;

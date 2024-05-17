@@ -1,0 +1,115 @@
+.signup-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: whitesmoke;
+}
+
+.signup-center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.signup-form-container {
+    background-color: #003366;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-title {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.signup-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.signup-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.signup-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #0070a3;
+    border-radius: 4px;
+    background-color: #004680;
+    color: white;
+}
+
+.signup-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: orange;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.signup-button:hover {
+    background-color: #e67350;
+}
+
+.signup-error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.signup-member-check {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link {
+    color: orange;
+    text-decoration: underline;
+}
+
+.signup-terms-privacy-links {
+    color: orange;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .signup-form-group {
+        width: 90%;
+    }
+
+    .signup-title {
+        font-size: 2rem;
+    }
+
+    .signup-label,
+    .signup-input,
+    .signup-button {
+        font-size: 1rem;
+    }
+}

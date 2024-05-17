@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import '../styles.css';
+import './Login.css';
 
 const Login = () => {
     const [errorMessage, setErrorMessage] = useState('');
@@ -11,13 +12,11 @@ const Login = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-
         await performLogin(email, password);
     };
 
     const performLogin = async (email, password) => {
         const auth = getAuth();
-
         try {
             await signInWithEmailAndPassword(auth, email, password);
             navigate('/book');
@@ -40,32 +39,34 @@ const Login = () => {
     };
 
     return (
-        <div className="container center-content">
-            <h1>Log In</h1>
-            <form className="row row-col form-background" onSubmit={logIn}>
-                <div className="col">
-                    <label>
-                        Email:
-                        <input type="text" name="email" required />
-                    </label>
-                </div>
-                <div className="col">
-                    <label>
-                        Password:
-                        <input type="password" name="password" required />
-                    </label>
-                </div>
-                <div className="col">
-                    <button type="submit">Log In</button>
-                    <br />
-                    <br />
-                    <button type="button" onClick={loginDemoUser}>Demo User</button>
-                </div>
-                {errorMessage && <div className="error-message">{errorMessage}</div>}
-                <div className="member-check">
-                    <button onClick={handleSignupRedirect}>Not a member? Sign up now</button>
-                </div>
-            </form>
+        <div className="login-container login-center-content">
+            <div className="login-form-container">
+                <h1 className="login-title">Log In</h1>
+                <form className="login-form" onSubmit={logIn}>
+                    <div className="login-form-group">
+                        <label className="login-label">
+                            Email:
+                            <input type="text" name="email" className="login-input" required />
+                        </label>
+                    </div>
+                    <div className="login-form-group">
+                        <label className="login-label">
+                            Password:
+                            <input type="password" name="password" className="login-input" required />
+                        </label>
+                    </div>
+                    <div className="login-form-group">
+                        <button type="submit" className="login-button">Log In</button>
+                        <br />
+                        <br />
+                        <button type="button" onClick={loginDemoUser} className="login-button">Demo User</button>
+                    </div>
+                    {errorMessage && <div className="login-error-message">{errorMessage}</div>}
+                    <div className="login-member-check">
+                        <button type="button" onClick={handleSignupRedirect} className="login-button">Not a member? Sign up now</button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };

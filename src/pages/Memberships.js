@@ -1,7 +1,7 @@
 const Memberships = () => {
     return (
         <>
-            <h1>Memberships</h1>
+            <h1>Page Under Construction</h1>
         </>
     )
 }
